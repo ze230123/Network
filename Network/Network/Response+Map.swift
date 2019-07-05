@@ -12,6 +12,7 @@ import Moya
 import ObjectMapper
 
 extension Response {
+    /// 转换模型
     func mapObject<T: BaseMappable>(_ type: T.Type, context: MapContext? = nil) throws -> T {
         let json = try mapString()
         guard let object = Mapper<T>(context: context).map(JSONString: json) else {
@@ -22,16 +23,38 @@ extension Response {
 }
 
 extension ObservableType where E == Response {
-    // ResultModel 根据需要替换
+    /// JSON转模型
+    ///
+    /// ResultModel 可根据需要替换
     func mapObject<T: BaseMappable>(_ type: T.Type, context: MapContext? = nil) -> Observable<ResultModel<T>> {
         return map { (response) in
             return try response.mapObject(ResultModel<T>.self, context: context)
         }
     }
 
+    /// JSON转模型数组
+    ///
+    /// ListModel 可根据需要替换
     func mapList<T: BaseMappable>(_ type: T.Type, context: MapContext? = nil) -> Observable<ListModel<T>> {
         return map { (response) in
             return try response.mapObject(ListModel<T>.self, context: context)
         }
+    }
+
+    /// 测试使用
+    func testMap<T: BaseMappable>(_ type: T.Type, context: MapContext? = nil) -> Observable<RootClass<T>> {
+        return map { (response) in
+            return try response.mapObject(RootClass<T>.self, context: context)
+        }
+    }
+}
+
+extension ObservableType {
+    /// 隐藏加载动画
+    func hiddenHud(_ block: @escaping () -> Void) -> Observable<E> {
+        return map { $0 }.do(onDispose: {
+            print("onDispose")
+            block()
+        })
     }
 }

@@ -13,6 +13,7 @@ protocol ApiTargetType: TargetType {
     var parameters: [String: Any] { get }
 }
 
+/// TargetType 包装，可以使用多个api
 enum MultiTarget: ApiTargetType {
     var encoding: ParameterEncoding {
         return target.encoding

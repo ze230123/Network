@@ -9,6 +9,9 @@ target 'Network' do
   pod 'ObjectMapper', '~> 3'
   pod 'Moya/RxSwift', '~> 13.0.1'
   pod 'RxCocoa'
+  pod 'MJRefresh'
+  pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'SnapKit'
 
   target 'NetworkTests' do
     inherit! :search_paths

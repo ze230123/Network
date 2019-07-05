@@ -10,26 +10,14 @@ import UIKit
 import RxSwift
 
 class ViewController: UIViewController {
-    lazy var server = Network()
-    let dis = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        server.signingIn
-            .subscribe { (event) in
-                switch event {
-                case .next(let isFinish):
-                    print(isFinish)
-                case .completed, .error:
-                    break
-                }
-            }.disposed(by: dis)
-        request()
     }
 
-    func request() {
-//        server.request(api: <#T##ApiTargetType#>)
+    @IBAction func textAction(_ sender: UIButton) {
+        MBProgressHUD.showMessage("加载成功", to: self.view)
     }
 }
 

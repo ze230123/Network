@@ -26,24 +26,24 @@ let requestTimeoutClosure = { (endpoint: Endpoint, closure: @escaping MoyaProvid
 var plugins: [PluginType] = [NetworkLoggerPlugin()]
 let provider = MoyaProvider<MultiTarget>(requestClosure: requestTimeoutClosure, plugins: plugins)
 
+let server = Network.share
+
+/// 网络服务单例（添加加载动画使用）
 class Network {
-    var vc: NetworkIndicatable?
-
-    let signingIn: Observable<Bool>
-
-    let indicator = ActivityIndicator()
+    static let share = Network()
     init() {
-        signingIn = indicator.asObservable()
     }
 }
 
 extension Network {
-    func showHUD() -> Network {
-        vc?.show()
+    /// 显示hud动画
+    func showHUD(_ block: () -> Void) -> Network {
+        block()
         return self
     }
 
+    /// 请求网络
     func request(api: ApiTargetType) -> Observable<Response> {
-        return provider.rx.request(MultiTarget(api)).asObservable().trackActivity(indicator)
+        return provider.rx.request(MultiTarget(api)).asObservable()
     }
 }

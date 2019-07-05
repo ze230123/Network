@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		12CB83DDDA048BE92D135188 /* Pods_NetworkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E7C673C754ACA31A79F069 /* Pods_NetworkUITests.framework */; };
+		76417E2822CEF009001B23FC /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2722CEF009001B23FC /* NetworkViewController.swift */; };
+		76417E2A22CF29B5001B23FC /* MBProgressHUD+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2922CF29B5001B23FC /* MBProgressHUD+Custom.swift */; };
+		76417E3022CF3F02001B23FC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2F22CF3F02001B23FC /* LoadingView.swift */; };
 		766CD97A22CC47C1004A3543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD97922CC47C1004A3543 /* AppDelegate.swift */; };
 		766CD97C22CC47C1004A3543 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD97B22CC47C1004A3543 /* ViewController.swift */; };
 		766CD97F22CC47C1004A3543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766CD97D22CC47C1004A3543 /* Main.storyboard */; };
@@ -16,11 +19,11 @@
 		766CD98F22CC47C2004A3543 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD98E22CC47C2004A3543 /* NetworkTests.swift */; };
 		766CD99A22CC47C2004A3543 /* NetworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD99922CC47C2004A3543 /* NetworkUITests.swift */; };
 		766CD9A922CC5054004A3543 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9A822CC5054004A3543 /* Network.swift */; };
-		766CD9AB22CC5263004A3543 /* NetworkIndicatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9AA22CC5263004A3543 /* NetworkIndicatable.swift */; };
 		766CD9AD22CC5674004A3543 /* MultiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9AC22CC5674004A3543 /* MultiTarget.swift */; };
 		766CD9B022CC9B5F004A3543 /* Response+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9AF22CC9B5F004A3543 /* Response+Map.swift */; };
 		766CD9B222CC9E9B004A3543 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9B122CC9E9B004A3543 /* ResultModel.swift */; };
-		766CD9B422CCB0BC004A3543 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9B322CCB0BC004A3543 /* ActivityIndicator.swift */; };
+		766CD9B622CDA649004A3543 /* TestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9B522CDA649004A3543 /* TestAPI.swift */; };
+		766CD9B822CDA8DB004A3543 /* NewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9B722CDA8DB004A3543 /* NewModel.swift */; };
 		AF33DAAD637D332FD7F8AE1E /* Pods_Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEFA65AF511076DA3BE6F23 /* Pods_Network.framework */; };
 		B70B926323C74BD573B844F9 /* Pods_NetworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995B398609AD1022B2952F9A /* Pods_NetworkTests.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +50,10 @@
 		1B56C100BE71ED5136D8A59A /* Pods-NetworkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkUITests.release.xcconfig"; path = "Target Support Files/Pods-NetworkUITests/Pods-NetworkUITests.release.xcconfig"; sourceTree = "<group>"; };
 		42E7C673C754ACA31A79F069 /* Pods_NetworkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E04E552C1FB2C2D4880F68 /* Pods-Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.release.xcconfig"; path = "Target Support Files/Pods-Network/Pods-Network.release.xcconfig"; sourceTree = "<group>"; };
+		76417E2722CEF009001B23FC /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
+		76417E2922CF29B5001B23FC /* MBProgressHUD+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Custom.swift"; sourceTree = "<group>"; };
+		76417E2B22CF2A26001B23FC /* Network-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Network-Bridging-Header.h"; sourceTree = "<group>"; };
+		76417E2F22CF3F02001B23FC /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		766CD97622CC47C1004A3543 /* Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Network.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		766CD97922CC47C1004A3543 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		766CD97B22CC47C1004A3543 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,11 +68,11 @@
 		766CD99922CC47C2004A3543 /* NetworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUITests.swift; sourceTree = "<group>"; };
 		766CD99B22CC47C2004A3543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		766CD9A822CC5054004A3543 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		766CD9AA22CC5263004A3543 /* NetworkIndicatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkIndicatable.swift; sourceTree = "<group>"; };
 		766CD9AC22CC5674004A3543 /* MultiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTarget.swift; sourceTree = "<group>"; };
 		766CD9AF22CC9B5F004A3543 /* Response+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Map.swift"; sourceTree = "<group>"; };
 		766CD9B122CC9E9B004A3543 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
-		766CD9B322CCB0BC004A3543 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		766CD9B522CDA649004A3543 /* TestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPI.swift; sourceTree = "<group>"; };
+		766CD9B722CDA8DB004A3543 /* NewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewModel.swift; sourceTree = "<group>"; };
 		995B398609AD1022B2952F9A /* Pods_NetworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C256DC77EE7C5B0D4B318177 /* Pods-NetworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkTests.release.xcconfig"; path = "Target Support Files/Pods-NetworkTests/Pods-NetworkTests.release.xcconfig"; sourceTree = "<group>"; };
 		C709855E1529B5979FA1C981 /* Pods-NetworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkTests.debug.xcconfig"; path = "Target Support Files/Pods-NetworkTests/Pods-NetworkTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,10 +159,16 @@
 				766CD9A722CC5043004A3543 /* Network */,
 				766CD97922CC47C1004A3543 /* AppDelegate.swift */,
 				766CD97B22CC47C1004A3543 /* ViewController.swift */,
+				76417E2722CEF009001B23FC /* NetworkViewController.swift */,
 				766CD97D22CC47C1004A3543 /* Main.storyboard */,
 				766CD98022CC47C2004A3543 /* Assets.xcassets */,
 				766CD98222CC47C2004A3543 /* LaunchScreen.storyboard */,
 				766CD98522CC47C2004A3543 /* Info.plist */,
+				766CD9B522CDA649004A3543 /* TestAPI.swift */,
+				766CD9B722CDA8DB004A3543 /* NewModel.swift */,
+				76417E2922CF29B5001B23FC /* MBProgressHUD+Custom.swift */,
+				76417E2F22CF3F02001B23FC /* LoadingView.swift */,
+				76417E2B22CF2A26001B23FC /* Network-Bridging-Header.h */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -181,9 +194,7 @@
 		766CD9A722CC5043004A3543 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				766CD9B322CCB0BC004A3543 /* ActivityIndicator.swift */,
 				766CD9A822CC5054004A3543 /* Network.swift */,
-				766CD9AA22CC5263004A3543 /* NetworkIndicatable.swift */,
 				766CD9AC22CC5674004A3543 /* MultiTarget.swift */,
 				766CD9AF22CC9B5F004A3543 /* Response+Map.swift */,
 				766CD9B122CC9E9B004A3543 /* ResultModel.swift */,
@@ -263,6 +274,7 @@
 				TargetAttributes = {
 					766CD97522CC47C1004A3543 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 					766CD98922CC47C2004A3543 = {
 						CreatedOnToolsVersion = 10.2;
@@ -413,12 +425,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				766CD97C22CC47C1004A3543 /* ViewController.swift in Sources */,
-				766CD9AB22CC5263004A3543 /* NetworkIndicatable.swift in Sources */,
+				76417E2822CEF009001B23FC /* NetworkViewController.swift in Sources */,
 				766CD9AD22CC5674004A3543 /* MultiTarget.swift in Sources */,
+				76417E2A22CF29B5001B23FC /* MBProgressHUD+Custom.swift in Sources */,
+				766CD9B622CDA649004A3543 /* TestAPI.swift in Sources */,
+				766CD9B822CDA8DB004A3543 /* NewModel.swift in Sources */,
 				766CD97A22CC47C1004A3543 /* AppDelegate.swift in Sources */,
-				766CD9B422CCB0BC004A3543 /* ActivityIndicator.swift in Sources */,
 				766CD9A922CC5054004A3543 /* Network.swift in Sources */,
 				766CD9B222CC9E9B004A3543 /* ResultModel.swift in Sources */,
+				76417E3022CF3F02001B23FC /* LoadingView.swift in Sources */,
 				766CD9B022CC9B5F004A3543 /* Response+Map.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,6 +610,7 @@
 			baseConfigurationReference = 09A9C3195B5D2FB03F09C1A5 /* Pods-Network.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4WM659594V;
 				INFOPLIST_FILE = Network/Info.plist;
@@ -604,6 +620,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eagersoftdbl.Network;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Network/Network-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -614,6 +632,7 @@
 			baseConfigurationReference = 51E04E552C1FB2C2D4880F68 /* Pods-Network.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4WM659594V;
 				INFOPLIST_FILE = Network/Info.plist;
@@ -623,6 +642,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eagersoftdbl.Network;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Network/Network-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
