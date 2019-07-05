@@ -9,7 +9,12 @@
 import Foundation
 import ObjectMapper
 
-struct RootClass<M: Mappable>: Mappable {
+protocol TestMappable: Mappable {
+    var code: Int { get set }
+    var msg: String { get set }
+}
+
+struct RootClass<M: Mappable>: TestMappable {
     var code: Int = 0
     var data: [M] = []
     var msg: String = ""

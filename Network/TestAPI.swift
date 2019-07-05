@@ -27,7 +27,8 @@ extension TestAPI: ApiTargetType {
     }
 
     var path: String {
-        return "satinApi"
+//        return "satinApi"
+        return "satinApis"
     }
 
     var method: Moya.Method {

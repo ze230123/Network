@@ -10,14 +10,12 @@ import Foundation
 import ObjectMapper
 
 protocol ObjectMappable: Mappable {
-    associatedtype M
 
     var code: String { get set }
     var isSuccess: Bool { get set }
     var message: String { get set }
     var fullMessage: String { get set }
     var timestamp: String { get set }
-    var result: M? { get set }
 }
 
 struct ResultModel<M: Mappable>: ObjectMappable {
@@ -41,7 +39,7 @@ struct ResultModel<M: Mappable>: ObjectMappable {
     }
 }
 
-struct ListModel<M: Mappable>: Mappable {
+struct ListModel<M: Mappable>: ObjectMappable {
     var fullMessage: String = ""
     var message: String = ""
     var timestamp: String = ""

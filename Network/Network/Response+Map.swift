@@ -58,3 +58,14 @@ extension ObservableType {
         })
     }
 }
+
+extension ObservableType where E: TestMappable {
+    func verifyStatus() -> Observable<E> {
+        return flatMap({ (root) -> Observable<E> in
+            guard root.code == 200 else {
+                return Observable.error(NetworkError.message(root.msg))
+            }
+            return Observable.just(root)
+        })
+    }
+}

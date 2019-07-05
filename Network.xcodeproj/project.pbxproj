@@ -11,6 +11,7 @@
 		76417E2822CEF009001B23FC /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2722CEF009001B23FC /* NetworkViewController.swift */; };
 		76417E2A22CF29B5001B23FC /* MBProgressHUD+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2922CF29B5001B23FC /* MBProgressHUD+Custom.swift */; };
 		76417E3022CF3F02001B23FC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2F22CF3F02001B23FC /* LoadingView.swift */; };
+		76417E3222CF5363001B23FC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E3122CF5363001B23FC /* NetworkError.swift */; };
 		766CD97A22CC47C1004A3543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD97922CC47C1004A3543 /* AppDelegate.swift */; };
 		766CD97C22CC47C1004A3543 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD97B22CC47C1004A3543 /* ViewController.swift */; };
 		766CD97F22CC47C1004A3543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766CD97D22CC47C1004A3543 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		76417E2922CF29B5001B23FC /* MBProgressHUD+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Custom.swift"; sourceTree = "<group>"; };
 		76417E2B22CF2A26001B23FC /* Network-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Network-Bridging-Header.h"; sourceTree = "<group>"; };
 		76417E2F22CF3F02001B23FC /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		76417E3122CF5363001B23FC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		766CD97622CC47C1004A3543 /* Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Network.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		766CD97922CC47C1004A3543 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		766CD97B22CC47C1004A3543 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				766CD9AC22CC5674004A3543 /* MultiTarget.swift */,
 				766CD9AF22CC9B5F004A3543 /* Response+Map.swift */,
 				766CD9B122CC9E9B004A3543 /* ResultModel.swift */,
+				76417E3122CF5363001B23FC /* NetworkError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				766CD97A22CC47C1004A3543 /* AppDelegate.swift in Sources */,
 				766CD9A922CC5054004A3543 /* Network.swift in Sources */,
 				766CD9B222CC9E9B004A3543 /* ResultModel.swift in Sources */,
+				76417E3222CF5363001B23FC /* NetworkError.swift in Sources */,
 				76417E3022CF3F02001B23FC /* LoadingView.swift in Sources */,
 				766CD9B022CC9B5F004A3543 /* Response+Map.swift in Sources */,
 			);

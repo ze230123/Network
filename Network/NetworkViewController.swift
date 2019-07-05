@@ -47,6 +47,7 @@ class NetworkViewController: UIViewController {
             .showHUD(startLoading)
             .request(api: TestAPI.new)
             .testMap(NewModel.self)
+            .verifyStatus()
             .hiddenHud(endLoading)
             .subscribe { [unowned self] (event) in
                 switch event {
