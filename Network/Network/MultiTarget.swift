@@ -13,6 +13,20 @@ protocol ApiTargetType: TargetType {
     var parameters: [String: Any] { get }
 }
 
+extension ApiTargetType {
+    var sampleData: Data {
+        return Data()
+    }
+
+    var task: Task {
+        return .requestParameters(parameters: parameters, encoding: encoding)
+    }
+
+    var headers: [String : String]? {
+        return nil
+    }
+}
+
 /// TargetType 包装，可以使用多个api
 enum MultiTarget: ApiTargetType {
     var encoding: ParameterEncoding {

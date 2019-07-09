@@ -19,20 +19,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="e0l-wf-1dr">
-                                <rect key="frame" x="176" y="408" width="62" height="80"/>
+                                <rect key="frame" x="153" y="383" width="108" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Oe-L9-5L5">
-                                        <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
                                         <state key="normal" title="textHUD"/>
                                         <connections>
                                             <action selector="textAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B9E-FS-uv2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iv-fi-xVG">
-                                        <rect key="frame" x="0.0" y="50" width="62" height="30"/>
+                                        <rect key="frame" x="0.0" y="50" width="108" height="30"/>
                                         <state key="normal" title="网络测试"/>
                                         <connections>
                                             <segue destination="mga-Rv-8cB" kind="show" id="mbl-kw-L4p"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGn-wX-BhX">
+                                        <rect key="frame" x="0.0" y="100" width="108" height="30"/>
+                                        <state key="normal" title="多接口连续调用"/>
+                                        <connections>
+                                            <segue destination="EoS-Ah-4xw" kind="show" id="MzH-EW-Z2F"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -102,7 +109,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aya-DC-HUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="138"/>
+            <point key="canvasLocation" x="2168" y="-78"/>
+        </scene>
+        <!--Multi Network View Controller-->
+        <scene sceneID="qa4-60-AG8">
+            <objects>
+                <viewController id="EoS-Ah-4xw" customClass="MultiNetworkViewController" customModule="Network" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c58-u0-ONn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="grM-vA-9cN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pTA-j4-Z7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2167" y="591"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RL3-YC-RrP">

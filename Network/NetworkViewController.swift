@@ -10,25 +10,13 @@ import UIKit
 import RxSwift
 import MJRefresh
 
-class NetworkViewController: UIViewController {
+class NetworkViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var pageIndex: Int = 0
 
-    let disposeBag = DisposeBag()
     var dataScore: [NewModel] = []
 
-    var hud: MBProgressHUD?
-
-    /// 开始加载动画 (此方法不会产生循环引用)
-    lazy var startLoading: () -> Void = { [weak self] in
-        self?.showHud()
-    }
-
-    /// 关闭加载动画 (此方法不会产生循环引用)
-    lazy var endLoading: () -> Void = { [weak self] in
-        self?.hiddenHUD()
-    }
 
     deinit {
         print("deinit_\(self)")
@@ -66,13 +54,13 @@ class NetworkViewController: UIViewController {
             }.disposed(by: disposeBag)
     }
 
-    func showHud() {
-        hud = MBProgressHUD.showLoading(to: view)
-    }
-
-    func hiddenHUD() {
-        hud?.hide(animated: true)
-    }
+//    func showHud() {
+//        hud = MBProgressHUD.showLoading(to: view)
+//    }
+//
+//    func hiddenHUD() {
+//        hud?.hide(animated: true)
+//    }
 }
 
 extension NetworkViewController: UITableViewDataSource {

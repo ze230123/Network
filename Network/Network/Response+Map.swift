@@ -15,6 +15,7 @@ extension Response {
     /// 转换模型
     func mapObject<T: BaseMappable>(_ type: T.Type, context: MapContext? = nil) throws -> T {
         let json = try mapString()
+        print(json)
         guard let object = Mapper<T>(context: context).map(JSONString: json) else {
             throw MoyaError.jsonMapping(self)
         }
@@ -38,6 +39,15 @@ extension ObservableType where E == Response {
     func mapList<T: BaseMappable>(_ type: T.Type, context: MapContext? = nil) -> Observable<ListModel<T>> {
         return map { (response) in
             return try response.mapObject(ListModel<T>.self, context: context)
+        }
+    }
+
+    /// JSON转String模型（var result: String）
+    ///
+    /// ResultModel 可根据需要替换
+    func mapStringModel() -> Observable<StringModel> {
+        return map { (response) in
+            return try response.mapObject(StringModel.self, context: nil)
         }
     }
 

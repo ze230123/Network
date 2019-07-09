@@ -58,3 +58,23 @@ struct ListModel<M: Mappable>: ObjectMappable {
         isSuccess   <- map["isSuccess"]
     }
 }
+
+struct StringModel: ObjectMappable {
+    var fullMessage: String = ""
+    var message: String = ""
+    var timestamp: String = ""
+    var result: String = ""
+    var code: String = ""
+    var isSuccess: Bool = false
+
+    init?(map: Map) {}
+
+    mutating func mapping(map: Map) {
+        fullMessage   <- map["fullMessage"]
+        message   <- map["message"]
+        timestamp   <- map["timestamp"]
+        result   <- map["result"]
+        code   <- map["code"]
+        isSuccess   <- map["isSuccess"]
+    }
+}
