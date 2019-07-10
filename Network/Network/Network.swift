@@ -12,7 +12,7 @@ import RxSwift
 let requestTimeoutClosure = { (endpoint: Endpoint, closure: @escaping MoyaProvider.RequestResultClosure) in
     do {
         var urlRequest = try endpoint.urlRequest()
-        //                urlRequest.timeoutInterval = timeoutInterval
+        urlRequest.timeoutInterval = 30
         closure(.success(urlRequest))
     } catch MoyaError.requestMapping(let url) {
         closure(.failure(MoyaError.requestMapping(url)))
@@ -23,7 +23,7 @@ let requestTimeoutClosure = { (endpoint: Endpoint, closure: @escaping MoyaProvid
     }
 }
 
-var plugins: [PluginType] = [NetworkLoggerPlugin()]
+var plugins: [PluginType] = [LoggerPlugin()]
 let provider = MoyaProvider<MultiTarget>(requestClosure: requestTimeoutClosure, plugins: plugins)
 
 let server = Network.share

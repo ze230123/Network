@@ -88,12 +88,68 @@ class LoginUtils {
             .request(api: api)
             .mapObject(Score.self)
             .map({ (root) in
-                guard let score = root.result else {
-                    throw NetworkError.message("获取成绩失败")
-                }
                 var new = info
-                new.score = score
+                new.score = root.result
                 return new
             })
     }
+
+    class func checkInfoStatus(info: UserInfo) {
+    }
+
+    private let info: UserInfo
+    private var status: Action = .main
+    private var view: UIView
+
+    init(info: UserInfo, view: UIView) {
+        self.info = info
+        self.view = view
+    }
+
+    func check() -> LoginUtils {
+        guard let phone = info.user?.mobilePhone, !phone.isEmpty else {
+            status = .phone
+            return self
+        }
+        guard let provinceId = info.user?.provinceId, provinceId != 0 else {
+            status = .info
+            return self
+        }
+        guard let scoreId = info.score?.numId, scoreId != 0 else {
+            status = .score
+            return self
+        }
+        status = .main
+        return self
+    }
+
+    func jump() -> LoginUtils {
+        switch status {
+        case .phone:
+            MBProgressHUD.showMessage("绑定手机号", to: view)
+        case .info:
+            MBProgressHUD.showMessage("完善信息", to: view)
+        case .score:
+            MBProgressHUD.showMessage("创建成绩", to: view)
+        case .main:
+            MBProgressHUD.showMessage("跳转到首页", to: view)
+        }
+        return self
+    }
+
+    func save() {
+        print("保存user信息")
+        print("保存score信息")
+    }
 }
+
+extension LoginUtils {
+    enum Action {
+        case phone
+        case info
+        case score
+        case main
+    }
+}
+
+let appdelegate = UIApplication.shared.keyWindow

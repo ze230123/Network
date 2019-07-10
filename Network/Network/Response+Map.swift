@@ -15,7 +15,6 @@ extension Response {
     /// 转换模型
     func mapObject<T: BaseMappable>(_ type: T.Type, context: MapContext? = nil) throws -> T {
         let json = try mapString()
-        print(json)
         guard let object = Mapper<T>(context: context).map(JSONString: json) else {
             throw MoyaError.jsonMapping(self)
         }
@@ -62,8 +61,15 @@ extension ObservableType where E == Response {
 extension ObservableType {
     /// 隐藏加载动画
     func hiddenHud(_ block: @escaping () -> Void) -> Observable<E> {
-        return map { $0 }.do(onDispose: {
-            print("onDispose")
+//        return map { $0 }.do(onSubscribed: {
+//            print("onDispose")
+//            block()
+//        })
+        return map { $0 }.do(onError: { (_) in
+            print("onError")
+            block()
+        }, onCompleted: {
+            print("onCompleted")
             block()
         })
     }

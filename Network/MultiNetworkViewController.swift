@@ -10,6 +10,11 @@ class MultiNetworkViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        request()
+    }
+
+    @IBAction func tapAction(_ sender: UIButton) {
+//        MBProgressHUD.showMessage("加载成功", to: self.view)
         request()
     }
 
@@ -42,12 +47,12 @@ class MultiNetworkViewController: BaseViewController {
             .flatMap(LoginUtils.getGKStatus)
             .flatMap(LoginUtils.getScore)
             .hiddenHud(endLoading)
-            .subscribe { (event) in
+            .subscribe { [unowned self] (event) in
                 switch event {
                 case .next(let root):
-                    print(root)
+                    LoginUtils(info: root, view: self.view).check().jump().save()
                 case .error(let error):
-                    print(error.localizedDescription)
+                    MBProgressHUD.showMessage(error.localizedDescription, to: self.view)
                 case .completed: break
                 }
             }.disposed(by: disposeBag)

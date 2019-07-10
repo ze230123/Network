@@ -118,7 +118,20 @@
                     <view key="view" contentMode="scaleToFill" id="c58-u0-ONn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9m-in-pwG">
+                                <rect key="frame" x="176" y="433" width="62" height="30"/>
+                                <state key="normal" title="发送请求"/>
+                                <connections>
+                                    <action selector="tapAction:" destination="EoS-Ah-4xw" eventType="touchUpInside" id="Uxl-Pd-d2c"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c9m-in-pwG" firstAttribute="centerY" secondItem="c58-u0-ONn" secondAttribute="centerY" id="fh1-fy-ZiK"/>
+                            <constraint firstItem="c9m-in-pwG" firstAttribute="centerX" secondItem="c58-u0-ONn" secondAttribute="centerX" id="zde-iH-4C3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="grM-vA-9cN"/>
                     </view>
                 </viewController>

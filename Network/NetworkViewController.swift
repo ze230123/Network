@@ -40,7 +40,6 @@ class NetworkViewController: BaseViewController {
             .subscribe { [unowned self] (event) in
                 switch event {
                 case .next(let root):
-                    print(root)
                     if action == .load {
                         self.dataScore.removeAll()
                     }
