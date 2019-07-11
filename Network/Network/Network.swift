@@ -46,4 +46,13 @@ extension Network {
     func request(api: ApiTargetType) -> Observable<Response> {
         return provider.rx.request(MultiTarget(api)).asObservable()
     }
+
+//    func zipRequest(api: ApiTargetType) -> Observable
+}
+
+extension Observable {
+    static func showHud(_ block: () -> Void) -> Observable.Type {
+        block()
+        return Observable.self
+    }
 }

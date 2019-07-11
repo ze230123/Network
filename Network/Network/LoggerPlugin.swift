@@ -20,20 +20,21 @@ final class LoggerPlugin: PluginType {
         switch result {
         case .success(let response):
             var items: [String] = []
-            items.append("┌────────────────────────────────────────────────────────────────\n")
-            items.append("├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄网络请求完成┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n")
-            items.append("├ 请求类型: \(response.request?.httpMethod ?? "") \n")
-            items.append("├ 请求地址: \(response.request?.url?.absoluteString ?? "") \n")
-            items.append("├ 响应代码: \(response.statusCode)")
-            items.append("├ 发送数据: \(response.request?.httpBody?.stringValue ?? "") \n")
-            items.append("├ 请求耗时: \(String(format: "%.2f", time(for: target.path)))ms \n")
-            items.append("├ 服务器返回数据: \((try? response.mapString()) ?? "") \n")
-            items.append("└──────────────────────────────────────────────────────────────── \n")
+            items.append("  ┌────────────────────────────────────────────────────────────────\n")
+            items.append("  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄网络请求完成┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n")
+            items.append("  ├ 请求类型: \(response.request?.httpMethod ?? "无") \n")
+            items.append("  ├ 请求地址: \(response.request?.url?.absoluteString ?? "无") \n")
+            items.append("  ├ 响应代码: \(response.statusCode) \n")
+            items.append("  ├ Body数据: \(response.request?.httpBody?.stringValue ?? "无") \n")
+            items.append("  ├ 请求耗时: \(String(format: "%.2f", time(for: target.path)))ms \n")
+            items.append("  ├ 服务器返回数据:  \((try? response.mapString()) ?? "无") \n")
+            items.append("  └──────────────────────────────────────────────────────────────── \n")
             outputItems(items)
         case .failure(let error):
             print(error.localizedDescription)
             //            outputError(logNetworkError(error, target: target))
         }
+        startTimes.removeValue(forKey: target.path)
     }
 
     func time(for path: String) -> CFAbsoluteTime {
@@ -44,10 +45,6 @@ final class LoggerPlugin: PluginType {
     fileprivate func outputItems(_ items: [String]) {
         print(items.joined(separator: ""))
     }
-
-//    fileprivate func outputError(_ items: [String]) {
-//        items.forEach { Logger.error($0) }
-//    }
 }
 
 

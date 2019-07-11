@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="e0l-wf-1dr">
-                                <rect key="frame" x="153" y="383" width="108" height="130"/>
+                                <rect key="frame" x="153" y="358" width="108" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Oe-L9-5L5">
                                         <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
@@ -40,6 +40,13 @@
                                         <state key="normal" title="多接口连续调用"/>
                                         <connections>
                                             <segue destination="EoS-Ah-4xw" kind="show" id="MzH-EW-Z2F"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ei-yU-T1K">
+                                        <rect key="frame" x="0.0" y="150" width="108" height="30"/>
+                                        <state key="normal" title="多接口并发调用"/>
+                                        <connections>
+                                            <segue destination="CyY-mR-F8r" kind="show" id="3hL-FM-Z61"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -109,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aya-DC-HUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2168" y="-78"/>
+            <point key="canvasLocation" x="2474" y="-554"/>
         </scene>
         <!--Multi Network View Controller-->
         <scene sceneID="qa4-60-AG8">
@@ -137,7 +144,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTA-j4-Z7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2167" y="591"/>
+            <point key="canvasLocation" x="2030" y="149"/>
+        </scene>
+        <!--Zip Network View Controller-->
+        <scene sceneID="KGW-mM-APo">
+            <objects>
+                <viewController id="CyY-mR-F8r" customClass="ZipNetworkViewController" customModule="Network" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GjM-go-dZA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWL-K2-wF9">
+                                <rect key="frame" x="176" y="433" width="62" height="30"/>
+                                <state key="normal" title="发送请求"/>
+                                <connections>
+                                    <action selector="tapAction:" destination="CyY-mR-F8r" eventType="touchUpInside" id="gDC-mS-Fae"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cWL-K2-wF9" firstAttribute="centerY" secondItem="GjM-go-dZA" secondAttribute="centerY" id="42Q-oT-GLO"/>
+                            <constraint firstItem="cWL-K2-wF9" firstAttribute="centerX" secondItem="GjM-go-dZA" secondAttribute="centerX" id="rmj-gk-KCZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Z9H-yW-2eg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T4o-I4-jeh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="871"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RL3-YC-RrP">
