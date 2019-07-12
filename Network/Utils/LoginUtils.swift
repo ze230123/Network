@@ -1,52 +1,16 @@
 //
-//  UserLogin.swift
+//  LoginUtils.swift
 //  Network
 //
-//  Created by youzy01 on 2019/7/8.
+//  Created by youzy01 on 2019/7/12.
 //  Copyright © 2019 youzy. All rights reserved.
 //
-
-import ObjectMapper
-
-struct UserLogin: Mappable {
-    var status: Int = 0
-    var userId: UserId?
-
-    init?(map: Map) {}
-
-    mutating func mapping(map: Map) {
-        status   <- map["status"]
-        userId <- map["userIdDto"]
-    }
-
-    var isLoginSuccess: Bool {
-        return status == 200
-    }
-
-    var state: LoginState? {
-        return LoginState(rawValue: status)
-    }
-}
-
-struct UserId: Mappable {
-    /// 用户ObjectId
-    var id: String = ""
-    /// 用户NumId
-    var numId: Int = 0
-    
-    init?(map: Map) {}
-    
-    mutating func mapping(map: Map) {
-        id   <- map["id"]
-        numId   <- map["numId"]
-    }
-}
 
 import RxSwift
 
 class LoginUtils {
     typealias UserIdBlock = (ResultModel<UserLogin>) throws -> Int
-
+    
     static let getUserId: UserIdBlock = { (root: ResultModel<UserLogin>) in
         guard let state = root.result?.state else {
             throw NetworkError.message("未知错误，登陆失败")
@@ -59,11 +23,11 @@ class LoginUtils {
         }
         return userId
     }
-
+    
     class func getUserInfo(id: Int) -> Observable<ResultModel<User>> {
         return server.request(api: NewAccountAPI.info(numId: id)).mapObject(User.self)
     }
-
+    
     class func getGKStatus(info: UserInfo) -> Observable<UserInfo> {
         guard let user = info.user else {
             return Observable.error(NetworkError.message("用户信息为空"))
@@ -78,7 +42,7 @@ class LoginUtils {
                 return new
             })
     }
-
+    
     class func getScore(info: UserInfo) -> Observable<UserInfo> {
         guard let user = info.user else {
             return Observable.error(NetworkError.message("用户信息为空"))
@@ -93,19 +57,19 @@ class LoginUtils {
                 return new
             })
     }
-
+    
     class func checkInfoStatus(info: UserInfo) {
     }
-
+    
     private let info: UserInfo
     private var status: Action = .main
     private var view: UIView
-
+    
     init(info: UserInfo, view: UIView) {
         self.info = info
         self.view = view
     }
-
+    
     func check() -> LoginUtils {
         guard let phone = info.user?.mobilePhone, !phone.isEmpty else {
             status = .phone
@@ -122,7 +86,7 @@ class LoginUtils {
         status = .main
         return self
     }
-
+    
     func jump() -> LoginUtils {
         switch status {
         case .phone:
@@ -136,7 +100,7 @@ class LoginUtils {
         }
         return self
     }
-
+    
     func save() {
         print("保存user信息")
         print("保存score信息")
@@ -151,5 +115,3 @@ extension LoginUtils {
         case main
     }
 }
-
-let appdelegate = UIApplication.shared.keyWindow

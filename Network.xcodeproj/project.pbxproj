@@ -13,6 +13,7 @@
 		762064D622D5BFBE005308B2 /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064D522D5BFBE005308B2 /* LoggerPlugin.swift */; };
 		762064D822D5E547005308B2 /* ZipNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064D722D5E547005308B2 /* ZipNetworkViewController.swift */; };
 		762064DA22D5E9F1005308B2 /* SchoolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064D922D5E9F1005308B2 /* SchoolModel.swift */; };
+		762064DD22D83577005308B2 /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064DC22D83577005308B2 /* LoginUtils.swift */; };
 		76417E2822CEF009001B23FC /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2722CEF009001B23FC /* NetworkViewController.swift */; };
 		76417E2A22CF29B5001B23FC /* MBProgressHUD+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2922CF29B5001B23FC /* MBProgressHUD+Custom.swift */; };
 		76417E3022CF3F02001B23FC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2F22CF3F02001B23FC /* LoadingView.swift */; };
@@ -69,6 +70,7 @@
 		762064D522D5BFBE005308B2 /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
 		762064D722D5E547005308B2 /* ZipNetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipNetworkViewController.swift; sourceTree = "<group>"; };
 		762064D922D5E9F1005308B2 /* SchoolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolModel.swift; sourceTree = "<group>"; };
+		762064DC22D83577005308B2 /* LoginUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUtils.swift; sourceTree = "<group>"; };
 		76417E2722CEF009001B23FC /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
 		76417E2922CF29B5001B23FC /* MBProgressHUD+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Custom.swift"; sourceTree = "<group>"; };
 		76417E2B22CF2A26001B23FC /* Network-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Network-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -159,6 +161,58 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		762064DB22D83552005308B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				766CD9B722CDA8DB004A3543 /* NewModel.swift */,
+				76417E3922D3114D001B23FC /* User.swift */,
+				76417E3B22D311BF001B23FC /* Score.swift */,
+				76417E3F22D317A1001B23FC /* UserLogin.swift */,
+				762064D922D5E9F1005308B2 /* SchoolModel.swift */,
+				762064D122D457E7005308B2 /* UserInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		762064DE22D835D1005308B2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				766CD9B522CDA649004A3543 /* TestAPI.swift */,
+				76417E3522D3101F001B23FC /* NewAccountAPI.swift */,
+				762064D322D45929005308B2 /* CommonDataAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		762064DF22D835ED005308B2 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				76417E2922CF29B5001B23FC /* MBProgressHUD+Custom.swift */,
+				76417E2F22CF3F02001B23FC /* LoadingView.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
+		762064E022D83615005308B2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				762064DC22D83577005308B2 /* LoginUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		762064E122D8362B005308B2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				76417E3D22D31634001B23FC /* BaseViewController.swift */,
+				766CD97B22CC47C1004A3543 /* ViewController.swift */,
+				76417E2722CEF009001B23FC /* NetworkViewController.swift */,
+				76417E3322D30CC7001B23FC /* MultiNetworkViewController.swift */,
+				762064D722D5E547005308B2 /* ZipNetworkViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		766CD96D22CC47C1004A3543 = {
 			isa = PBXGroup;
 			children = (
@@ -184,31 +238,20 @@
 		766CD97822CC47C1004A3543 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				762064E122D8362B005308B2 /* ViewControllers */,
+				762064E022D83615005308B2 /* Utils */,
+				762064DF22D835ED005308B2 /* VIews */,
+				762064DE22D835D1005308B2 /* API */,
+				762064DB22D83552005308B2 /* Model */,
 				766CD9A722CC5043004A3543 /* Network */,
 				766CD97922CC47C1004A3543 /* AppDelegate.swift */,
-				766CD97B22CC47C1004A3543 /* ViewController.swift */,
-				76417E2722CEF009001B23FC /* NetworkViewController.swift */,
-				76417E3322D30CC7001B23FC /* MultiNetworkViewController.swift */,
-				762064D722D5E547005308B2 /* ZipNetworkViewController.swift */,
 				766CD97D22CC47C1004A3543 /* Main.storyboard */,
 				766CD98022CC47C2004A3543 /* Assets.xcassets */,
 				766CD98222CC47C2004A3543 /* LaunchScreen.storyboard */,
 				766CD98522CC47C2004A3543 /* Info.plist */,
-				766CD9B522CDA649004A3543 /* TestAPI.swift */,
-				76417E3522D3101F001B23FC /* NewAccountAPI.swift */,
-				762064D322D45929005308B2 /* CommonDataAPI.swift */,
-				766CD9B722CDA8DB004A3543 /* NewModel.swift */,
-				76417E2922CF29B5001B23FC /* MBProgressHUD+Custom.swift */,
-				76417E2F22CF3F02001B23FC /* LoadingView.swift */,
 				76417E2B22CF2A26001B23FC /* Network-Bridging-Header.h */,
 				76417E3722D3108C001B23FC /* AppConstant.swift */,
-				76417E3922D3114D001B23FC /* User.swift */,
-				76417E3B22D311BF001B23FC /* Score.swift */,
-				76417E3D22D31634001B23FC /* BaseViewController.swift */,
-				76417E3F22D317A1001B23FC /* UserLogin.swift */,
 				76417E4122D320F3001B23FC /* LoginState.swift */,
-				762064D122D457E7005308B2 /* UserInfo.swift */,
-				762064D922D5E9F1005308B2 /* SchoolModel.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -481,6 +524,7 @@
 				76417E3822D3108C001B23FC /* AppConstant.swift in Sources */,
 				766CD9B822CDA8DB004A3543 /* NewModel.swift in Sources */,
 				766CD97A22CC47C1004A3543 /* AppDelegate.swift in Sources */,
+				762064DD22D83577005308B2 /* LoginUtils.swift in Sources */,
 				766CD9A922CC5054004A3543 /* Network.swift in Sources */,
 				766CD9B222CC9E9B004A3543 /* ResultModel.swift in Sources */,
 				76417E3222CF5363001B23FC /* NetworkError.swift in Sources */,
