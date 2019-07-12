@@ -29,6 +29,7 @@ class FileTestViewController: BaseViewController {
         guard !manager.fileExists(atPath: path) else {
             return
         }
+
         do {
             try manager.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
         } catch let error {
