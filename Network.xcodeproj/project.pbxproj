@@ -14,6 +14,8 @@
 		762064D822D5E547005308B2 /* ZipNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064D722D5E547005308B2 /* ZipNetworkViewController.swift */; };
 		762064DA22D5E9F1005308B2 /* SchoolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064D922D5E9F1005308B2 /* SchoolModel.swift */; };
 		762064DD22D83577005308B2 /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064DC22D83577005308B2 /* LoginUtils.swift */; };
+		762064E322D8368D005308B2 /* FileTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064E222D8368D005308B2 /* FileTestViewController.swift */; };
+		762064E522D8520B005308B2 /* String+Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064E422D8520B005308B2 /* String+Security.swift */; };
 		76417E2822CEF009001B23FC /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2722CEF009001B23FC /* NetworkViewController.swift */; };
 		76417E2A22CF29B5001B23FC /* MBProgressHUD+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2922CF29B5001B23FC /* MBProgressHUD+Custom.swift */; };
 		76417E3022CF3F02001B23FC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2F22CF3F02001B23FC /* LoadingView.swift */; };
@@ -71,6 +73,8 @@
 		762064D722D5E547005308B2 /* ZipNetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipNetworkViewController.swift; sourceTree = "<group>"; };
 		762064D922D5E9F1005308B2 /* SchoolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolModel.swift; sourceTree = "<group>"; };
 		762064DC22D83577005308B2 /* LoginUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUtils.swift; sourceTree = "<group>"; };
+		762064E222D8368D005308B2 /* FileTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTestViewController.swift; sourceTree = "<group>"; };
+		762064E422D8520B005308B2 /* String+Security.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Security.swift"; sourceTree = "<group>"; };
 		76417E2722CEF009001B23FC /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
 		76417E2922CF29B5001B23FC /* MBProgressHUD+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Custom.swift"; sourceTree = "<group>"; };
 		76417E2B22CF2A26001B23FC /* Network-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Network-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 		762064E022D83615005308B2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				762064E422D8520B005308B2 /* String+Security.swift */,
 				762064DC22D83577005308B2 /* LoginUtils.swift */,
 			);
 			path = Utils;
@@ -209,6 +214,7 @@
 				76417E2722CEF009001B23FC /* NetworkViewController.swift */,
 				76417E3322D30CC7001B23FC /* MultiNetworkViewController.swift */,
 				762064D722D5E547005308B2 /* ZipNetworkViewController.swift */,
+				762064E222D8368D005308B2 /* FileTestViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -524,8 +530,10 @@
 				76417E3822D3108C001B23FC /* AppConstant.swift in Sources */,
 				766CD9B822CDA8DB004A3543 /* NewModel.swift in Sources */,
 				766CD97A22CC47C1004A3543 /* AppDelegate.swift in Sources */,
+				762064E322D8368D005308B2 /* FileTestViewController.swift in Sources */,
 				762064DD22D83577005308B2 /* LoginUtils.swift in Sources */,
 				766CD9A922CC5054004A3543 /* Network.swift in Sources */,
+				762064E522D8520B005308B2 /* String+Security.swift in Sources */,
 				766CD9B222CC9E9B004A3543 /* ResultModel.swift in Sources */,
 				76417E3222CF5363001B23FC /* NetworkError.swift in Sources */,
 				762064DA22D5E9F1005308B2 /* SchoolModel.swift in Sources */,

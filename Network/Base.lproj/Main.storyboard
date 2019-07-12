@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="e0l-wf-1dr">
-                                <rect key="frame" x="153" y="358" width="108" height="180"/>
+                                <rect key="frame" x="153" y="333" width="108" height="230"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Oe-L9-5L5">
                                         <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
@@ -47,6 +47,13 @@
                                         <state key="normal" title="多接口并发调用"/>
                                         <connections>
                                             <segue destination="CyY-mR-F8r" kind="show" id="3hL-FM-Z61"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gw7-ru-Uwj">
+                                        <rect key="frame" x="0.0" y="200" width="108" height="30"/>
+                                        <state key="normal" title="文件存储"/>
+                                        <connections>
+                                            <segue destination="SWw-qn-F4z" kind="show" id="Clx-or-Zap"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -146,6 +153,138 @@
             </objects>
             <point key="canvasLocation" x="2030" y="149"/>
         </scene>
+        <!--File Test View Controller-->
+        <scene sceneID="K8W-O5-S7H">
+            <objects>
+                <viewController id="SWw-qn-F4z" customClass="FileTestViewController" customModule="Network" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F3R-Jp-hEQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AI6-kV-yZY">
+                                <rect key="frame" x="16" y="103" width="382" height="106"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C19-BR-xo6">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="缓存key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPm-fF-0nD">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="XO3-EE-upS"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sAJ-jd-lz0">
+                                                <rect key="frame" x="75" y="0.0" width="307" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cu0-CU-GL6">
+                                        <rect key="frame" x="0.0" y="38" width="382" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="缓存内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaM-yV-nGY">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="lvj-gL-D28"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BwZ-AT-seG">
+                                                <rect key="frame" x="75" y="0.0" width="307" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eH5-ca-hr7">
+                                        <rect key="frame" x="0.0" y="76" width="382" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="过期时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAk-w7-RrP">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="X3i-1a-taF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Omw-Tr-qhV">
+                                                <rect key="frame" x="75" y="0.0" width="307" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bPo-T3-2ZN">
+                                <rect key="frame" x="16" y="224" width="382" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlZ-IL-ZA8">
+                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="30"/>
+                                        <state key="normal" title="保存"/>
+                                        <connections>
+                                            <action selector="addAction:" destination="SWw-qn-F4z" eventType="touchUpInside" id="rfS-Fy-qEB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DN4-Y9-iyf">
+                                        <rect key="frame" x="132.5" y="0.0" width="117" height="30"/>
+                                        <state key="normal" title="删除"/>
+                                        <connections>
+                                            <action selector="removeAction:" destination="SWw-qn-F4z" eventType="touchUpInside" id="e2u-6a-gvi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lX6-Ru-4Zc">
+                                        <rect key="frame" x="264.5" y="0.0" width="117.5" height="30"/>
+                                        <state key="normal" title="读取"/>
+                                        <connections>
+                                            <action selector="readAction:" destination="SWw-qn-F4z" eventType="touchUpInside" id="zbe-gW-hez"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wi-YM-h9w">
+                                <rect key="frame" x="16" y="269" width="382" height="593"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cIc-9O-Zl0" firstAttribute="trailing" secondItem="2wi-YM-h9w" secondAttribute="trailing" constant="16" id="1eD-4h-5We"/>
+                            <constraint firstItem="AI6-kV-yZY" firstAttribute="top" secondItem="cIc-9O-Zl0" secondAttribute="top" constant="15" id="5fw-wa-q8D"/>
+                            <constraint firstItem="cIc-9O-Zl0" firstAttribute="trailing" secondItem="bPo-T3-2ZN" secondAttribute="trailing" constant="16" id="HQ3-z4-YCq"/>
+                            <constraint firstItem="bPo-T3-2ZN" firstAttribute="leading" secondItem="cIc-9O-Zl0" secondAttribute="leading" constant="16" id="SFW-dQ-5Hh"/>
+                            <constraint firstItem="2wi-YM-h9w" firstAttribute="top" secondItem="bPo-T3-2ZN" secondAttribute="bottom" constant="15" id="bxQ-PF-vaz"/>
+                            <constraint firstItem="bPo-T3-2ZN" firstAttribute="top" secondItem="AI6-kV-yZY" secondAttribute="bottom" constant="15" id="gPM-Rj-vHM"/>
+                            <constraint firstItem="cIc-9O-Zl0" firstAttribute="trailing" secondItem="AI6-kV-yZY" secondAttribute="trailing" constant="16" id="hQR-qa-ptM"/>
+                            <constraint firstItem="2wi-YM-h9w" firstAttribute="leading" secondItem="cIc-9O-Zl0" secondAttribute="leading" constant="16" id="rFP-4V-Xto"/>
+                            <constraint firstItem="cIc-9O-Zl0" firstAttribute="bottom" secondItem="2wi-YM-h9w" secondAttribute="bottom" id="uib-r3-WIy"/>
+                            <constraint firstItem="AI6-kV-yZY" firstAttribute="leading" secondItem="cIc-9O-Zl0" secondAttribute="leading" constant="16" id="zaU-S6-pL5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cIc-9O-Zl0"/>
+                    </view>
+                    <connections>
+                        <outlet property="bodyField" destination="BwZ-AT-seG" id="ZQx-Qw-jD1"/>
+                        <outlet property="dateField" destination="Omw-Tr-qhV" id="QeV-B0-7TL"/>
+                        <outlet property="keyField" destination="sAJ-jd-lz0" id="Mrc-Ru-7g5"/>
+                        <outlet property="textView" destination="2wi-YM-h9w" id="8Dh-vX-nJ2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UC0-WH-1hE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030.4347826086957" y="878.57142857142856"/>
+        </scene>
         <!--Zip Network View Controller-->
         <scene sceneID="KGW-mM-APo">
             <objects>
@@ -172,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T4o-I4-jeh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="871"/>
+            <point key="canvasLocation" x="2029" y="879"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RL3-YC-RrP">

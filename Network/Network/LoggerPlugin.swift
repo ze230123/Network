@@ -30,6 +30,8 @@ final class LoggerPlugin: PluginType {
             items.append("  ├ 服务器返回数据:  \((try? response.mapString()) ?? "无") \n")
             items.append("  └──────────────────────────────────────────────────────────────── \n")
             outputItems(items)
+
+            print(response.response?.allHeaderFields ?? [:])
         case .failure(let error):
             print(error.localizedDescription)
             //            outputError(logNetworkError(error, target: target))
