@@ -9,6 +9,8 @@
 import Foundation
 import MBProgressHUD
 
+typealias MBHUD = MBProgressHUD
+
 extension MBProgressHUD {
     static func showLoading(to view: UIView, animated: Bool = true) -> MBProgressHUD {
         let hud = MBProgressHUD.showAdded(to: view, animated: animated)

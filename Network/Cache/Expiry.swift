@@ -16,4 +16,15 @@ public enum Expiry {
     case seconds(TimeInterval)
     /// 对象将在指定日期过期
     case date(Date)
+
+    var date: Date {
+        switch self {
+        case .never:
+            return Date(timeIntervalSince1970: 60 * 60 * 24 * 365 * 100)
+        case .seconds(let s):
+            return Date().addingTimeInterval(s)
+        case .date(let date):
+            return date
+        }
+    }
 }

@@ -12,8 +12,8 @@ import RxSwift
 class BaseViewController: UIViewController {
     let disposeBag = DisposeBag()
 
-    var hud: MBProgressHUD?
-    
+    var hud: MBHUD?
+
     /// 开始加载动画 (此方法不会产生循环引用)
     lazy var startLoading: () -> Void = { [weak self] in
         self?.showHud()
@@ -29,7 +29,7 @@ class BaseViewController: UIViewController {
     }
 
     func showHud() {
-        hud = MBProgressHUD.showLoading(to: view)
+        hud = MBHUD.showLoading(to: view)
     }
 
     func hiddenHUD() {

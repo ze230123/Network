@@ -90,13 +90,13 @@ class LoginUtils {
     func jump() -> LoginUtils {
         switch status {
         case .phone:
-            MBProgressHUD.showMessage("绑定手机号", to: view)
+            MBHUD.showMessage("绑定手机号", to: view)
         case .info:
-            MBProgressHUD.showMessage("完善信息", to: view)
+            MBHUD.showMessage("完善信息", to: view)
         case .score:
-            MBProgressHUD.showMessage("创建成绩", to: view)
+            MBHUD.showMessage("创建成绩", to: view)
         case .main:
-            MBProgressHUD.showMessage("跳转到首页", to: view)
+            MBHUD.showMessage("跳转到首页", to: view)
         }
         return self
     }

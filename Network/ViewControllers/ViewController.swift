@@ -9,14 +9,14 @@
 import UIKit
 import RxSwift
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func textAction(_ sender: UIButton) {
-        MBProgressHUD.showMessage("加载成功", to: self.view)
+        MBHUD.showMessage("加载成功", to: self.view)
     }
 }
 

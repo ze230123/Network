@@ -31,8 +31,9 @@ class ZipNetworkViewController: BaseViewController {
             .hiddenHud(endLoading)
             .subscribe { (event) in
                 switch event {
-                case .next(let root):
-                    print(root)
+                case .next(let (list, result)):
+                    print(list)
+                    print(result)
                 case .error(let error):
                     print(error.localizedDescription)
                 case .completed: break

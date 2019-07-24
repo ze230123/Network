@@ -41,6 +41,13 @@
 		766CD9B222CC9E9B004A3543 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9B122CC9E9B004A3543 /* ResultModel.swift */; };
 		766CD9B622CDA649004A3543 /* TestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9B522CDA649004A3543 /* TestAPI.swift */; };
 		766CD9B822CDA8DB004A3543 /* NewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9B722CDA8DB004A3543 /* NewModel.swift */; };
+		766DAFF622E848F20035610E /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DAFF522E848F20035610E /* Transformer.swift */; };
+		766DAFF822E84BB30035610E /* TransformerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DAFF722E84BB30035610E /* TransformerFactory.swift */; };
+		766DAFFA22E84C300035610E /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DAFF922E84C300035610E /* Data+Extensions.swift */; };
+		768CB58422E7F306001BE0B4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB58322E7F306001BE0B4 /* Date+Extensions.swift */; };
+		768CB58A22E825B8001BE0B4 /* ExpiryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB58922E825B8001BE0B4 /* ExpiryTests.swift */; };
+		768CB58C22E8305A001BE0B4 /* Date+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB58B22E8305A001BE0B4 /* Date+ExtensionsTests.swift */; };
+		768CB58E22E8313D001BE0B4 /* DiskStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB58D22E8313D001BE0B4 /* DiskStorageTests.swift */; };
 		76AF893D22D8832C00DDEBFE /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AF893C22D8832C00DDEBFE /* Cache.swift */; };
 		76AF893F22D88A9E00DDEBFE /* Expiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AF893E22D88A9E00DDEBFE /* Expiry.swift */; };
 		AF33DAAD637D332FD7F8AE1E /* Pods_Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEFA65AF511076DA3BE6F23 /* Pods_Network.framework */; };
@@ -79,7 +86,6 @@
 		762064E422D8520B005308B2 /* String+Security.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Security.swift"; sourceTree = "<group>"; };
 		76417E2722CEF009001B23FC /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
 		76417E2922CF29B5001B23FC /* MBProgressHUD+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Custom.swift"; sourceTree = "<group>"; };
-		76417E2B22CF2A26001B23FC /* Network-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Network-Bridging-Header.h"; sourceTree = "<group>"; };
 		76417E2F22CF3F02001B23FC /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		76417E3122CF5363001B23FC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		76417E3322D30CC7001B23FC /* MultiNetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiNetworkViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +115,13 @@
 		766CD9B122CC9E9B004A3543 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		766CD9B522CDA649004A3543 /* TestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPI.swift; sourceTree = "<group>"; };
 		766CD9B722CDA8DB004A3543 /* NewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewModel.swift; sourceTree = "<group>"; };
+		766DAFF522E848F20035610E /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
+		766DAFF722E84BB30035610E /* TransformerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerFactory.swift; sourceTree = "<group>"; };
+		766DAFF922E84C300035610E /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		768CB58322E7F306001BE0B4 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		768CB58922E825B8001BE0B4 /* ExpiryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiryTests.swift; sourceTree = "<group>"; };
+		768CB58B22E8305A001BE0B4 /* Date+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		768CB58D22E8313D001BE0B4 /* DiskStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorageTests.swift; sourceTree = "<group>"; };
 		76AF893C22D8832C00DDEBFE /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		76AF893E22D88A9E00DDEBFE /* Expiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expiry.swift; sourceTree = "<group>"; };
 		995B398609AD1022B2952F9A /* Pods_NetworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,7 +273,6 @@
 				766CD98022CC47C2004A3543 /* Assets.xcassets */,
 				766CD98222CC47C2004A3543 /* LaunchScreen.storyboard */,
 				766CD98522CC47C2004A3543 /* Info.plist */,
-				76417E2B22CF2A26001B23FC /* Network-Bridging-Header.h */,
 				76417E3722D3108C001B23FC /* AppConstant.swift */,
 				76417E4122D320F3001B23FC /* LoginState.swift */,
 			);
@@ -272,6 +284,9 @@
 			children = (
 				766CD98E22CC47C2004A3543 /* NetworkTests.swift */,
 				766CD99022CC47C2004A3543 /* Info.plist */,
+				768CB58922E825B8001BE0B4 /* ExpiryTests.swift */,
+				768CB58B22E8305A001BE0B4 /* Date+ExtensionsTests.swift */,
+				768CB58D22E8313D001BE0B4 /* DiskStorageTests.swift */,
 			);
 			path = NetworkTests;
 			sourceTree = "<group>";
@@ -303,6 +318,10 @@
 			children = (
 				76AF893C22D8832C00DDEBFE /* Cache.swift */,
 				76AF893E22D88A9E00DDEBFE /* Expiry.swift */,
+				768CB58322E7F306001BE0B4 /* Date+Extensions.swift */,
+				766DAFF522E848F20035610E /* Transformer.swift */,
+				766DAFF722E84BB30035610E /* TransformerFactory.swift */,
+				766DAFF922E84C300035610E /* Data+Extensions.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -532,14 +551,17 @@
 				76417E3C22D311BF001B23FC /* Score.swift in Sources */,
 				766CD97C22CC47C1004A3543 /* ViewController.swift in Sources */,
 				76417E2822CEF009001B23FC /* NetworkViewController.swift in Sources */,
+				766DAFF822E84BB30035610E /* TransformerFactory.swift in Sources */,
 				766CD9AD22CC5674004A3543 /* MultiTarget.swift in Sources */,
 				76417E2A22CF29B5001B23FC /* MBProgressHUD+Custom.swift in Sources */,
 				762064D822D5E547005308B2 /* ZipNetworkViewController.swift in Sources */,
 				76417E4222D320F3001B23FC /* LoginState.swift in Sources */,
 				76417E3E22D31634001B23FC /* BaseViewController.swift in Sources */,
 				76417E3A22D3114D001B23FC /* User.swift in Sources */,
+				768CB58422E7F306001BE0B4 /* Date+Extensions.swift in Sources */,
 				766CD9B622CDA649004A3543 /* TestAPI.swift in Sources */,
 				762064D422D4592A005308B2 /* CommonDataAPI.swift in Sources */,
+				766DAFFA22E84C300035610E /* Data+Extensions.swift in Sources */,
 				76417E3422D30CC7001B23FC /* MultiNetworkViewController.swift in Sources */,
 				76417E3822D3108C001B23FC /* AppConstant.swift in Sources */,
 				766CD9B822CDA8DB004A3543 /* NewModel.swift in Sources */,
@@ -559,6 +581,7 @@
 				762064D222D457E7005308B2 /* UserInfo.swift in Sources */,
 				76417E4022D317A1001B23FC /* UserLogin.swift in Sources */,
 				76AF893D22D8832C00DDEBFE /* Cache.swift in Sources */,
+				766DAFF622E848F20035610E /* Transformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +589,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				768CB58E22E8313D001BE0B4 /* DiskStorageTests.swift in Sources */,
+				768CB58C22E8305A001BE0B4 /* Date+ExtensionsTests.swift in Sources */,
+				768CB58A22E825B8001BE0B4 /* ExpiryTests.swift in Sources */,
 				766CD98F22CC47C2004A3543 /* NetworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,7 +770,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eagersoftdbl.Network;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Network/Network-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -766,7 +792,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eagersoftdbl.Network;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Network/Network-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -788,6 +814,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eagersoftdbl.NetworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Network.app/Network";
@@ -810,6 +837,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eagersoftdbl.NetworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Network.app/Network";
@@ -831,6 +859,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eagersoftdbl.NetworkUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Network;
@@ -852,6 +881,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eagersoftdbl.NetworkUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Network;

@@ -5,6 +5,7 @@
 //  Created by youzy01 on 2019/7/8.
 //  Copyright © 2019 youzy. All rights reserved.
 //
+import UIKit
 
 class MultiNetworkViewController: BaseViewController {
 
@@ -52,7 +53,7 @@ class MultiNetworkViewController: BaseViewController {
                 case .next(let root):
                     LoginUtils(info: root, view: self.view).check().jump().save()
                 case .error(let error):
-                    MBProgressHUD.showMessage(error.localizedDescription, to: self.view)
+                    MBHUD.showMessage(error.localizedDescription, to: self.view)
                 case .completed: break
                 }
             }.disposed(by: disposeBag)

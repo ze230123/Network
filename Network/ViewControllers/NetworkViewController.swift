@@ -45,7 +45,7 @@ class NetworkViewController: BaseViewController {
                     }
                     self.dataScore.append(contentsOf: root.data)
                 case .error(let error):
-                    MBProgressHUD.showMessage(error.localizedDescription, to: self.view)
+                    MBHUD.showMessage(error.localizedDescription, to: self.view)
                 case .completed:
                     self.tableView.reloadData()
                     self.endRefresh(action: action)
