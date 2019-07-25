@@ -54,7 +54,7 @@ extension Network {
 extension Network {
     func getSchools(api: ApiTargetType) -> Observable<ListModel<Schools>> {
         let request = provider.rx.request(ApiMultiTarget(api)).asObservable().mapList(Schools.self).verifyStatus()
-        return FirstCacheStrategy<ListModel<Schools>>(api: api, observable: request).doIt()
+        return FirstRequestStrategy<ListModel<Schools>>(api: api, observable: request).doIt()
     }
 }
 
@@ -118,8 +118,27 @@ class FirstCacheStrategy<T: ObjectMappable> {
     }
 }
 
+class FirstRequestStrategy<T: ObjectMappable> {
+    var api: ApiTargetType
+    var observable: Observable<T>
+    
+    init(api: ApiTargetType, observable: Observable<T>) {
+        self.api = api
+        self.observable = observable
+    }
 
+    func doIt() -> Observable<T> {
+        let key = api.cacheKey
+        let request = observable.verifyStatus().saveCache(key: key)
 
+        return request.catchError({ (error) -> Observable<T> in
+            guard let model = RxCache<T>().object(key) else {
+                return Observable.error(error)
+            }
+            return Observable.just(model)
+        })
+    }
+}
 
 extension Observable {
     static func showHud(_ block: () -> Void) -> Observable.Type {
