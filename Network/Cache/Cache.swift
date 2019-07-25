@@ -16,7 +16,7 @@ class Cache {
         config: DiskConfig(
             name: "URLCache",
             maxSize: 1024 * 10,
-            expiry: .seconds(60 * 60 * 24)),
+            expiry: .never),
         transformer: TransformerFactory.forString()
     )
 
@@ -30,6 +30,17 @@ class Cache {
 
     var totalSize: UInt64 {
         return store.totalSize()
+    }
+
+    func update() {
+        let filePath = store.makeFilePath(for: "count=0&parentId=56")
+
+        do {
+            try store.fileManager.setAttributes([.modificationDate: Expiry.never.date], ofItemAtPath: filePath)
+            print("设置缓存时间完成")
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
 }
 
@@ -95,17 +106,14 @@ extension DiskStorage {
         guard fileManager.fileExists(atPath: filePath) else {
             return nil
         }
-        let attributes = try? fileManager.attributesOfItem(atPath: filePath)
-        let date = attributes?[.modificationDate] as? Date
+        let attributes = try! fileManager.attributesOfItem(atPath: filePath)
+        let date = attributes[.modificationDate] as? Date
         let time = date?.timeIntervalSinceNow ?? 0
         guard time > 0 else {
             removeObject(forKey: filePath)
             return nil
         }
         let data = try? Data(contentsOf: URL(fileURLWithPath: filePath))
-//        guard let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) else {
-//            return nil
-//        }
         return transformer.fromData(data)
     }
 
@@ -255,6 +263,7 @@ extension DiskStorage {
     func makeFileName(for key: String) -> String {
         let fileExtension = URL(fileURLWithPath: key).pathExtension
         let fileName = key.MD5
+        print("keyMd5: ", fileName)
 
         switch fileExtension.isEmpty {
         case true:

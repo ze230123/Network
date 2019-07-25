@@ -53,12 +53,12 @@ extension NewAccountAPI: ApiTargetType {
         }
     }
 
-//    var policy: CachePolicy {
-//        switch self {
-//        default:
-//            return .none
-//        }
-//    }
+    var policy: CachePolicy {
+        switch self {
+        default:
+            return .none
+        }
+    }
 
 //    var module: APIModule {
 //        return .other

@@ -22,6 +22,13 @@ extension TestAPI: ApiTargetType {
         return ["type": 1, "page": 1]
     }
 
+    var policy: CachePolicy {
+        switch self {
+        default:
+            return .none
+        }
+    }
+
     var baseURL: URL {
         return URL(string: "https://www.apiopen.top")!
     }

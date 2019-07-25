@@ -16,7 +16,8 @@ class ZipNetworkViewController: BaseViewController {
     }
 
     @IBAction func tapAction(_ sender: UIButton) {
-        request()
+//        request()
+        schoolRequest()
     }
 
     func request() {
@@ -37,6 +38,23 @@ class ZipNetworkViewController: BaseViewController {
                 case .error(let error):
                     print(error.localizedDescription)
                 case .completed: break
+                }
+            }.disposed(by: disposeBag)
+    }
+
+    func schoolRequest() {
+        server
+            .showHUD(startLoading)
+            .getSchools(api: CommonDataAPI.schoolList(id: 56))
+            .hiddenHud(endLoading)
+            .subscribe { (event) in
+                switch event {
+                case .next(let root):
+                    print("item:", root)
+                case .error(let error):
+                    print(error.localizedDescription)
+                case .completed:
+                    print("完成")
                 }
             }.disposed(by: disposeBag)
     }

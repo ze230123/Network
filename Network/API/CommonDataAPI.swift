@@ -39,15 +39,15 @@ extension CommonDataAPI: ApiTargetType {
         }
     }
 
-//    var policy: CachePolicy {
-//        switch self {
-//        case .batch:
-//            return .cache
-//        default:
-//            return .none
-//        }
-//    }
-//
+    var policy: CachePolicy {
+        switch self {
+        case .batch:
+            return .cache
+        default:
+            return .none
+        }
+    }
+
 //    var module: APIModule {
 //        switch self {
 //        case .batch, .jsYfyd:

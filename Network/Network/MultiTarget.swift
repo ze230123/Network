@@ -11,6 +11,8 @@ import Moya
 protocol ApiTargetType: TargetType {
     var encoding: ParameterEncoding { get }
     var parameters: [String: Any] { get }
+    var policy: CachePolicy { get }
+    var cacheKey: String { get }
 }
 
 extension ApiTargetType {
@@ -22,13 +24,28 @@ extension ApiTargetType {
         return .requestParameters(parameters: parameters, encoding: encoding)
     }
 
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         return nil
+    }
+
+    var cacheKey: String {
+        let keyValue = parameters.map { "\($0.key)=\($0.value)"}.sorted()
+        let key: String = keyValue.joined(separator: "&")
+        print("缓存key: ", key)
+        return key
     }
 }
 
 /// TargetType 包装，可以使用多个api
-enum MultiTarget: ApiTargetType {
+enum ApiMultiTarget: ApiTargetType {
+    /// The embedded `TargetType`.
+    case target(ApiTargetType)
+
+    /// Initializes a `MultiTarget`.
+    public init(_ target: ApiTargetType) {
+        self = ApiMultiTarget.target(target)
+    }
+
     var encoding: ParameterEncoding {
         return target.encoding
     }
@@ -37,12 +54,12 @@ enum MultiTarget: ApiTargetType {
         return target.parameters
     }
 
-    /// The embedded `TargetType`.
-    case target(ApiTargetType)
+    var policy: CachePolicy {
+        return target.policy
+    }
 
-    /// Initializes a `MultiTarget`.
-    public init(_ target: ApiTargetType) {
-        self = MultiTarget.target(target)
+    var cacheKey: String {
+        return target.cacheKey
     }
 
     /// The embedded target's base `URL`.

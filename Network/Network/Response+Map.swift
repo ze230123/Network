@@ -85,3 +85,25 @@ extension ObservableType where E: TestMappable {
         })
     }
 }
+
+extension ObservableType where E: ObjectMappable {
+    func verifyStatus() -> Observable<E> {
+        return flatMap({ (root) -> Observable<E> in
+            guard root.isSuccess else {
+                return Observable.error(NetworkError.message(root.message))
+            }
+            return Observable.just(root)
+        })
+    }
+
+    func saveCache(key: String) -> Observable<E> {
+        return map({ (root) in
+            if root.isSuccess {
+                if let json = root.toJSONString(prettyPrint: true) {
+                    Cache.share.setCache(json, key: key)
+                }
+            }
+            return root
+        })
+    }
+}

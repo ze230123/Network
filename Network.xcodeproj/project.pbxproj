@@ -44,6 +44,8 @@
 		766DAFF622E848F20035610E /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DAFF522E848F20035610E /* Transformer.swift */; };
 		766DAFF822E84BB30035610E /* TransformerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DAFF722E84BB30035610E /* TransformerFactory.swift */; };
 		766DAFFA22E84C300035610E /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DAFF922E84C300035610E /* Data+Extensions.swift */; };
+		766DAFFC22E84E720035610E /* MoyaProviderType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DAFFB22E84E720035610E /* MoyaProviderType+Extensions.swift */; };
+		766DAFFE22E8559F0035610E /* CachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DAFFD22E8559F0035610E /* CachePolicy.swift */; };
 		768CB58422E7F306001BE0B4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB58322E7F306001BE0B4 /* Date+Extensions.swift */; };
 		768CB58A22E825B8001BE0B4 /* ExpiryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB58922E825B8001BE0B4 /* ExpiryTests.swift */; };
 		768CB58C22E8305A001BE0B4 /* Date+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB58B22E8305A001BE0B4 /* Date+ExtensionsTests.swift */; };
@@ -118,6 +120,8 @@
 		766DAFF522E848F20035610E /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
 		766DAFF722E84BB30035610E /* TransformerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerFactory.swift; sourceTree = "<group>"; };
 		766DAFF922E84C300035610E /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		766DAFFB22E84E720035610E /* MoyaProviderType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProviderType+Extensions.swift"; sourceTree = "<group>"; };
+		766DAFFD22E8559F0035610E /* CachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachePolicy.swift; sourceTree = "<group>"; };
 		768CB58322E7F306001BE0B4 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		768CB58922E825B8001BE0B4 /* ExpiryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiryTests.swift; sourceTree = "<group>"; };
 		768CB58B22E8305A001BE0B4 /* Date+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ExtensionsTests.swift"; sourceTree = "<group>"; };
@@ -305,10 +309,12 @@
 			children = (
 				766CD9A822CC5054004A3543 /* Network.swift */,
 				766CD9AC22CC5674004A3543 /* MultiTarget.swift */,
+				766DAFFD22E8559F0035610E /* CachePolicy.swift */,
 				766CD9AF22CC9B5F004A3543 /* Response+Map.swift */,
 				766CD9B122CC9E9B004A3543 /* ResultModel.swift */,
 				76417E3122CF5363001B23FC /* NetworkError.swift */,
 				762064D522D5BFBE005308B2 /* LoggerPlugin.swift */,
+				766DAFFB22E84E720035610E /* MoyaProviderType+Extensions.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -553,6 +559,7 @@
 				76417E2822CEF009001B23FC /* NetworkViewController.swift in Sources */,
 				766DAFF822E84BB30035610E /* TransformerFactory.swift in Sources */,
 				766CD9AD22CC5674004A3543 /* MultiTarget.swift in Sources */,
+				766DAFFC22E84E720035610E /* MoyaProviderType+Extensions.swift in Sources */,
 				76417E2A22CF29B5001B23FC /* MBProgressHUD+Custom.swift in Sources */,
 				762064D822D5E547005308B2 /* ZipNetworkViewController.swift in Sources */,
 				76417E4222D320F3001B23FC /* LoginState.swift in Sources */,
@@ -567,6 +574,7 @@
 				766CD9B822CDA8DB004A3543 /* NewModel.swift in Sources */,
 				766CD97A22CC47C1004A3543 /* AppDelegate.swift in Sources */,
 				762064E322D8368D005308B2 /* FileTestViewController.swift in Sources */,
+				766DAFFE22E8559F0035610E /* CachePolicy.swift in Sources */,
 				762064DD22D83577005308B2 /* LoginUtils.swift in Sources */,
 				766CD9A922CC5054004A3543 /* Network.swift in Sources */,
 				762064E522D8520B005308B2 /* String+Security.swift in Sources */,
