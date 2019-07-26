@@ -95,3 +95,23 @@ struct StringModel: ObjectMappable {
         isSuccess   <- map["isSuccess"]
     }
 }
+
+/// 验证请求是否成功协议
+protocol VerifyMappable: Mappable {
+    var isSuccess: Bool { get set }
+    var message: String { get set }
+}
+
+/// 验证请求是否成功模型
+struct ResponseVerify: VerifyMappable {
+    var message: String = ""
+    var isSuccess: Bool = false
+
+    init() {}
+    init?(map: Map) {}
+
+    mutating func mapping(map: Map) {
+        message   <- map["message"]
+        isSuccess   <- map["isSuccess"]
+    }
+}

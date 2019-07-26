@@ -9,6 +9,19 @@ import UIKit
 import Moya
 import RxSwift
 
+/// 判断response中服务器返回数据状态
+///
+/// 此方法根据服务器实际返回的数据做判断
+func responseIsSuccess(_ response: Response) -> Bool {
+    guard let json = try? response.mapString() else {
+        return false
+    }
+    guard let item = ResponseVerify(JSONString: json) else {
+        return false
+    }
+    return item.isSuccess
+}
+
 let requestTimeoutClosure = { (endpoint: Endpoint, closure: @escaping MoyaProvider.RequestResultClosure) in
     do {
         var urlRequest = try endpoint.urlRequest()
@@ -43,106 +56,20 @@ extension Network {
     }
 
     /// 请求网络
+    ///
+    /// 缓存策略已添加，数据转换需要外部处理
     func request(api: ApiTargetType) -> Observable<Response> {
-        return provider.rx.request(ApiMultiTarget(api)).asObservable()
+        let request = provider.rx.request(ApiMultiTarget(api)).asObservable()
+        let strategy = api.policy.stratey(api: api, observable: request)
+        return strategy.verifyMap(responseIsSuccess(_:)).run()
     }
 }
 
 extension Network {
-}
-
-extension Network {
+    /// 封装好的接口方法，接口缓存、模型转换都已处理完毕，外部订阅后可直接使用模型
     func getSchools(api: ApiTargetType) -> Observable<ListModel<Schools>> {
-        let request = provider.rx.request(ApiMultiTarget(api)).asObservable().mapList(Schools.self).verifyStatus()
-        return FirstRequestStrategy<ListModel<Schools>>(api: api, observable: request).doIt()
-    }
-}
-
-import ObjectMapper
-
-class RxCache<T: Mappable> {
-    func object(_ key: String) -> T? {
-        guard let object = Cache.share.cache(for: key) else {
-            return nil
-        }
-//        print("缓存", object)
-        let model = Mapper<T>().map(JSONString: object)
-//        print("缓存", model)
-        return model
-    }
-}
-
-class CacheStrategy<T: ObjectMappable> {
-    var api: ApiTargetType
-    var observable: Observable<T>
-
-    init(api: ApiTargetType, observable: Observable<T>) {
-        self.api = api
-        self.observable = observable
-    }
-
-    func doIt() -> Observable<T> {
-        let key = api.cacheKey
-        if let model = RxCache<T>().object(key) {
-            return Observable<T>.just(model)
-        } else {
-            return observable.verifyStatus().map({ (model) in
-                if let json = model.toJSONString(prettyPrint: true) {
-                    Cache.share.setCache(json, key: key)
-                }
-                return model
-            })
-        }
-    }
-}
-
-class FirstCacheStrategy<T: ObjectMappable> {
-    var api: ApiTargetType
-    var observable: Observable<T>
-
-    init(api: ApiTargetType, observable: Observable<T>) {
-        self.api = api
-        self.observable = observable
-    }
-
-    func doIt() -> Observable<T> {
-        let key = api.cacheKey
-        let request = observable.verifyStatus().saveCache(key: key)
-
-        guard let model = RxCache<T>().object(key) else {
-            return request
-        }
-        return Observable<T>.just(model).concat(request).distinctUntilChanged({ (item1, item2) -> Bool in
-            return item1.hash == item2.hash
-        })
-    }
-}
-
-class FirstRequestStrategy<T: ObjectMappable> {
-    var api: ApiTargetType
-    var observable: Observable<T>
-    
-    init(api: ApiTargetType, observable: Observable<T>) {
-        self.api = api
-        self.observable = observable
-    }
-
-    func doIt() -> Observable<T> {
-        let key = api.cacheKey
-        let request = observable.verifyStatus().saveCache(key: key)
-
-        return request.catchError({ (error) -> Observable<T> in
-            guard let model = RxCache<T>().object(key) else {
-                return Observable.error(error)
-            }
-            return Observable.just(model)
-        })
-    }
-}
-
-extension Observable {
-    static func showHud(_ block: () -> Void) -> Observable.Type {
-        block()
-        return Observable.self
+        let request = provider.rx.request(ApiMultiTarget(api)).asObservable()
+        let strategy = api.policy.stratey(api: api, observable: request)
+        return strategy.verifyMap(responseIsSuccess(_:)).run().mapList(Schools.self).verifyStatus()
     }
 }
