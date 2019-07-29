@@ -35,6 +35,10 @@ class BaseStrategy {
 /// 不使用缓存的策略实现
 class NoneStrategy: BaseStrategy {
     override func run() -> Observable<Response> {
+        guard RepeatHelper.share.valid(of: api.cacheKey) else {
+            return Observable.error(NetworkError.reqeatCount)
+        }
+        RepeatHelper.share.add(api.cacheKey)
         return observable
     }
 }
@@ -47,24 +51,43 @@ class CacheStrategy: BaseStrategy {
             let response = Response(statusCode: 203, data: model)
             return Observable.just(response)
         } else {
-            assert(successResult == nil, "verifyMap(:) 没有调用")
+            assert(successResult != nil, "verifyMap(:) 没有调用")
+            guard RepeatHelper.share.valid(of: api.cacheKey) else {
+                return Observable.error(NetworkError.reqeatCount)
+            }
+            RepeatHelper.share.add(api.cacheKey)
             return observable.saveCache(key: key, successResult: successResult)
         }
     }
 }
+
 /// 先返回缓存，在请求网络
 class FirstCacheStrategy: BaseStrategy {
 
     override func run() -> Observable<Response> {
-        assert(successResult == nil, "verifyMap(:) 没有调用")
+        assert(successResult != nil, "verifyMap(:) 没有调用")
+        func loadCache(key: String) -> Observable<Response> {
+            guard let model = Cache.share.cache(for: key)?.data(using: .utf8) else {
+                return Observable.error(NetworkError.reqeatCount)
+            }
+            let response = Response(statusCode: 203, data: model)
+
+            return Observable.just(response)
+        }
 
         let key = api.cacheKey
+        guard RepeatHelper.share.valid(of: key) else {
+            return loadCache(key: key)
+        }
+        RepeatHelper.share.add(api.cacheKey)
+
         let request = observable.saveCache(key: key, successResult: successResult)
 
         guard let model = Cache.share.cache(for: key)?.data(using: .utf8) else {
             return request
         }
         let response = Response(statusCode: 203, data: model)
+
         return Observable.just(response).concat(request).distinctUntilChanged({ (item1, item2) -> Bool in
             return item1.data == item2.data
         })
@@ -75,16 +98,27 @@ class FirstCacheStrategy: BaseStrategy {
 class FirstRequestStrategy: BaseStrategy {
 
     override func run() -> Observable<Response> {
-        assert(successResult == nil, "verifyMap(:) 没有调用")
-        let key = api.cacheKey
-        let request = observable.saveCache(key: key, successResult: successResult)
-
-        return request.catchError({ (error) -> Observable<Response> in
+        func loadCache(key: String, error: Error) -> Observable<Response> {
             guard let model = Cache.share.cache(for: key)?.data(using: .utf8) else {
                 return Observable.error(error)
             }
             let response = Response(statusCode: 203, data: model)
             return Observable.just(response)
+        }
+
+        assert(successResult != nil, "verifyMap(:) 没有调用")
+
+        let key = api.cacheKey
+
+        guard RepeatHelper.share.valid(of: key) else {
+            return loadCache(key: api.cacheKey, error: NetworkError.reqeatCount)
+        }
+        RepeatHelper.share.add(api.cacheKey)
+
+        let request = observable.saveCache(key: key, successResult: successResult)
+
+        return request.catchError({ (error) -> Observable<Response> in
+            return loadCache(key: key, error: error)
         })
     }
 }

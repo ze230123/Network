@@ -52,7 +52,7 @@ class ZipNetworkViewController: BaseViewController {
                 case .next(let root):
                     print("item:", root)
                 case .error(let error):
-                    print(error.localizedDescription)
+                    print("错误", error.localizedDescription)
                 case .completed:
                     print("完成")
                 }

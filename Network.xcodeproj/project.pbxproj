@@ -10,6 +10,9 @@
 		12CB83DDDA048BE92D135188 /* Pods_NetworkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E7C673C754ACA31A79F069 /* Pods_NetworkUITests.framework */; };
 		7604E09622EAC2C2005A4503 /* BaseStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7604E09522EAC2C2005A4503 /* BaseStrategy.swift */; };
 		7604E09822EACF98005A4503 /* ObservableType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7604E09722EACF98005A4503 /* ObservableType+Extensions.swift */; };
+		7604E09E22EAF873005A4503 /* RepeatRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7604E09D22EAF873005A4503 /* RepeatRequestHelper.swift */; };
+		7604E0A022EAFDE9005A4503 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7604E09F22EAFDE9005A4503 /* AppDatabase.swift */; };
+		7604E0A222EE93EF005A4503 /* RepeatHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7604E0A122EE93EF005A4503 /* RepeatHelperTests.swift */; };
 		762064D222D457E7005308B2 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064D122D457E7005308B2 /* UserInfo.swift */; };
 		762064D422D4592A005308B2 /* CommonDataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064D322D45929005308B2 /* CommonDataAPI.swift */; };
 		762064D622D5BFBE005308B2 /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064D522D5BFBE005308B2 /* LoggerPlugin.swift */; };
@@ -81,6 +84,9 @@
 		51E04E552C1FB2C2D4880F68 /* Pods-Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.release.xcconfig"; path = "Target Support Files/Pods-Network/Pods-Network.release.xcconfig"; sourceTree = "<group>"; };
 		7604E09522EAC2C2005A4503 /* BaseStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStrategy.swift; sourceTree = "<group>"; };
 		7604E09722EACF98005A4503 /* ObservableType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extensions.swift"; sourceTree = "<group>"; };
+		7604E09D22EAF873005A4503 /* RepeatRequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatRequestHelper.swift; sourceTree = "<group>"; };
+		7604E09F22EAFDE9005A4503 /* AppDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		7604E0A122EE93EF005A4503 /* RepeatHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatHelperTests.swift; sourceTree = "<group>"; };
 		762064D122D457E7005308B2 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		762064D322D45929005308B2 /* CommonDataAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDataAPI.swift; sourceTree = "<group>"; };
 		762064D522D5BFBE005308B2 /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
@@ -293,6 +299,7 @@
 				768CB58922E825B8001BE0B4 /* ExpiryTests.swift */,
 				768CB58B22E8305A001BE0B4 /* Date+ExtensionsTests.swift */,
 				768CB58D22E8313D001BE0B4 /* DiskStorageTests.swift */,
+				7604E0A122EE93EF005A4503 /* RepeatHelperTests.swift */,
 			);
 			path = NetworkTests;
 			sourceTree = "<group>";
@@ -318,6 +325,8 @@
 				762064D522D5BFBE005308B2 /* LoggerPlugin.swift */,
 				7604E09522EAC2C2005A4503 /* BaseStrategy.swift */,
 				7604E09722EACF98005A4503 /* ObservableType+Extensions.swift */,
+				7604E09D22EAF873005A4503 /* RepeatRequestHelper.swift */,
+				7604E09F22EAFDE9005A4503 /* AppDatabase.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -563,6 +572,7 @@
 				76417E2822CEF009001B23FC /* NetworkViewController.swift in Sources */,
 				766DAFF822E84BB30035610E /* TransformerFactory.swift in Sources */,
 				766CD9AD22CC5674004A3543 /* MultiTarget.swift in Sources */,
+				7604E0A022EAFDE9005A4503 /* AppDatabase.swift in Sources */,
 				76417E2A22CF29B5001B23FC /* MBProgressHUD+Custom.swift in Sources */,
 				762064D822D5E547005308B2 /* ZipNetworkViewController.swift in Sources */,
 				76417E4222D320F3001B23FC /* LoginState.swift in Sources */,
@@ -574,6 +584,7 @@
 				766DAFFA22E84C300035610E /* Data+Extensions.swift in Sources */,
 				76417E3422D30CC7001B23FC /* MultiNetworkViewController.swift in Sources */,
 				76417E3822D3108C001B23FC /* AppConstant.swift in Sources */,
+				7604E09E22EAF873005A4503 /* RepeatRequestHelper.swift in Sources */,
 				766CD9B822CDA8DB004A3543 /* NewModel.swift in Sources */,
 				766CD97A22CC47C1004A3543 /* AppDelegate.swift in Sources */,
 				762064E322D8368D005308B2 /* FileTestViewController.swift in Sources */,
@@ -605,6 +616,7 @@
 				768CB58C22E8305A001BE0B4 /* Date+ExtensionsTests.swift in Sources */,
 				768CB58A22E825B8001BE0B4 /* ExpiryTests.swift in Sources */,
 				766CD98F22CC47C2004A3543 /* NetworkTests.swift in Sources */,
+				7604E0A222EE93EF005A4503 /* RepeatHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

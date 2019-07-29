@@ -41,6 +41,8 @@ extension CommonDataAPI: ApiTargetType {
 
     var policy: CachePolicy {
         switch self {
+        case .schoolList:
+            return .firstCache
         case .batch:
             return .cache
         default:

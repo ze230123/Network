@@ -12,6 +12,7 @@ target 'Network' do
   pod 'MJRefresh'
   pod 'MBProgressHUD', '~> 1.1.0'
   pod 'SnapKit'
+  pod 'GRDB.swift'
 
   target 'NetworkTests' do
     inherit! :search_paths
