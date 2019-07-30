@@ -87,6 +87,7 @@
 		7604E09D22EAF873005A4503 /* RepeatRequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatRequestHelper.swift; sourceTree = "<group>"; };
 		7604E09F22EAFDE9005A4503 /* AppDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		7604E0A122EE93EF005A4503 /* RepeatHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatHelperTests.swift; sourceTree = "<group>"; };
+		7604E0A322EED3CC005A4503 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		762064D122D457E7005308B2 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		762064D322D45929005308B2 /* CommonDataAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDataAPI.swift; sourceTree = "<group>"; };
 		762064D522D5BFBE005308B2 /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
@@ -229,6 +230,8 @@
 		762064E022D83615005308B2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7604E09722EACF98005A4503 /* ObservableType+Extensions.swift */,
+				766CD9AF22CC9B5F004A3543 /* Response+Map.swift */,
 				762064E422D8520B005308B2 /* String+Security.swift */,
 				762064DC22D83577005308B2 /* LoginUtils.swift */,
 			);
@@ -251,6 +254,7 @@
 		766CD96D22CC47C1004A3543 = {
 			isa = PBXGroup;
 			children = (
+				7604E0A322EED3CC005A4503 /* MyPlayground.playground */,
 				766CD97822CC47C1004A3543 /* Network */,
 				766CD98D22CC47C2004A3543 /* NetworkTests */,
 				766CD99822CC47C2004A3543 /* NetworkUITests */,
@@ -273,13 +277,12 @@
 		766CD97822CC47C1004A3543 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				766CD9A722CC5043004A3543 /* Network */,
 				76AF893B22D8831A00DDEBFE /* Cache */,
 				762064E122D8362B005308B2 /* ViewControllers */,
-				762064E022D83615005308B2 /* Utils */,
 				762064DF22D835ED005308B2 /* VIews */,
 				762064DE22D835D1005308B2 /* API */,
 				762064DB22D83552005308B2 /* Model */,
-				766CD9A722CC5043004A3543 /* Network */,
 				766CD97922CC47C1004A3543 /* AppDelegate.swift */,
 				766CD97D22CC47C1004A3543 /* Main.storyboard */,
 				766CD98022CC47C2004A3543 /* Assets.xcassets */,
@@ -319,14 +322,13 @@
 				766CD9A822CC5054004A3543 /* Network.swift */,
 				766CD9AC22CC5674004A3543 /* MultiTarget.swift */,
 				766DAFFD22E8559F0035610E /* CachePolicy.swift */,
-				766CD9AF22CC9B5F004A3543 /* Response+Map.swift */,
 				766CD9B122CC9E9B004A3543 /* ResultModel.swift */,
 				76417E3122CF5363001B23FC /* NetworkError.swift */,
 				762064D522D5BFBE005308B2 /* LoggerPlugin.swift */,
 				7604E09522EAC2C2005A4503 /* BaseStrategy.swift */,
-				7604E09722EACF98005A4503 /* ObservableType+Extensions.swift */,
 				7604E09D22EAF873005A4503 /* RepeatRequestHelper.swift */,
 				7604E09F22EAFDE9005A4503 /* AppDatabase.swift */,
+				762064E022D83615005308B2 /* Utils */,
 			);
 			path = Network;
 			sourceTree = "<group>";

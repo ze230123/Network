@@ -7,6 +7,7 @@
 //
 import Foundation
 import CommonCrypto
+import CryptoSwift
 
 // MARK: - Hmac加密枚举选项
 enum CryptoAlgorithm {  // 2，SHA（安全散列算法：Secure Hash Algorithm） // 不可逆
@@ -116,5 +117,19 @@ extension String {
         let badchar: CharacterSet = CharacterSet(charactersIn: "\"<\",\">\"")
         let cleanedstring: String = (hashedString.components(separatedBy: badchar) as NSArray).componentsJoined(by: "")
         return cleanedstring
+    }
+}
+
+
+extension String {
+    var aes: String {
+        do {
+            let aes = try AES(key: "keykeykeykeykeyk", iv: "drowssapdrowssap") // aes128
+            let ciphertext = try aes.encrypt(Array(self.utf8))
+            return ciphertext.toHexString()
+        } catch let error {
+            print("aes error", error.localizedDescription)
+            return ""
+        }
     }
 }

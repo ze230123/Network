@@ -10,7 +10,7 @@ import RxSwift
 
 class LoginUtils {
     typealias UserIdBlock = (ResultModel<UserLogin>) throws -> Int
-    
+
     static let getUserId: UserIdBlock = { (root: ResultModel<UserLogin>) in
         guard let state = root.result?.state else {
             throw NetworkError.message("未知错误，登陆失败")
