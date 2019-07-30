@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// 转换工厂类
 public class TransformerFactory {
     public static func forString() -> Transformer<String> {
         let toData: (String?) -> Data? = { $0?.data(using: .utf8) }

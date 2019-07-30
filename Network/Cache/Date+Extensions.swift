@@ -13,6 +13,7 @@ import Foundation
  */
 extension Date {
 
+    /// 检查日期是否过期
     /// Checks if the date is in the past.
     var inThePast: Bool {
         return timeIntervalSinceNow < 0

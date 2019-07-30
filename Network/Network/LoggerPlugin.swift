@@ -9,6 +9,12 @@
 import Moya
 import Result
 
+fileprivate func ZLog(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+    #if DEBUG
+    print(items, separator: separator, terminator: terminator)
+    #endif
+}
+
 final class LoggerPlugin: PluginType {
     var startTimes: [String: CFAbsoluteTime] = [:]
 
@@ -45,7 +51,7 @@ final class LoggerPlugin: PluginType {
     }
 
     fileprivate func outputItems(_ items: [String]) {
-        print(items.joined(separator: ""))
+        ZLog(items.joined(separator: ""))
     }
 }
 

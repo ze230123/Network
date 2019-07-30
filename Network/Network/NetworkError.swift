@@ -13,7 +13,6 @@ enum NetworkError: Error {
     case failure
     case reqeatCount
     case noCache
-
 }
 
 extension NetworkError: CustomStringConvertible {

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// 缓存数据转换
 public class Transformer<T> {
     let toData: (T?) -> Data?
     let fromData: (Data?) -> T?

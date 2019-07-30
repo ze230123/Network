@@ -8,7 +8,7 @@
 
 import Foundation
 import GRDB
-
+/// 网络链接请求记录
 struct RepeatItem {
     var id: Int64?
     var path: String = ""
@@ -36,7 +36,7 @@ extension RepeatItem: Codable, FetchableRecord, MutablePersistableRecord, TableR
         id = rowID
     }
 }
-
+/// 网络请求次数帮助类
 class RepeatHelper {
     static var maxCount: Int = 5
 
@@ -47,7 +47,7 @@ class RepeatHelper {
     init(queue: DatabaseQueue) {
         self.queue = queue
     }
-
+    /// 添加网络api记录
     func add(_ path: String) {
         var item = RepeatItem(path: path.MD5)
         do {
@@ -58,7 +58,7 @@ class RepeatHelper {
             print(error.localizedDescription)
         }
     }
-
+    /// 验证api请求是否有效
     func valid(of key: String) -> Bool {
         let path = Column("path")
         let date = Column("date")
@@ -76,7 +76,7 @@ class RepeatHelper {
         }
         return count < RepeatHelper.maxCount
     }
-
+    /// 删除api请求记录
     func removeExpriy() {
         let date = Column("date")
         let oldDate = Date(timeIntervalSinceNow: -60)

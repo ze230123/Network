@@ -8,7 +8,7 @@
 
 import Foundation
 import ObjectMapper
-
+/// 服务器返回json通用参数协议
 protocol ObjectMappable: Mappable {
 
     var code: String { get set }
@@ -20,7 +20,7 @@ protocol ObjectMappable: Mappable {
     /// 用于判断两个数据是否一样
     var hash: String { get }
 }
-
+/// 常规模型
 struct ResultModel<M: Mappable>: ObjectMappable {
     var fullMessage: String = ""
     var message: String = ""
@@ -46,7 +46,7 @@ struct ResultModel<M: Mappable>: ObjectMappable {
         isSuccess   <- map["isSuccess"]
     }
 }
-
+/// 数组模型
 struct ListModel<M: Mappable>: ObjectMappable {
     var fullMessage: String = ""
     var message: String = ""
@@ -71,7 +71,7 @@ struct ListModel<M: Mappable>: ObjectMappable {
         isSuccess   <- map["isSuccess"]
     }
 }
-
+/// 字符串模型
 struct StringModel: ObjectMappable {
     var fullMessage: String = ""
     var message: String = ""
@@ -95,7 +95,7 @@ struct StringModel: ObjectMappable {
         isSuccess   <- map["isSuccess"]
     }
 }
-
+// MARK: - Verify
 /// 验证请求是否成功协议
 protocol VerifyMappable: Mappable {
     var isSuccess: Bool { get set }
