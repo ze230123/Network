@@ -8,6 +8,7 @@
 
 import Foundation
 import GRDB
+
 /// 网络链接请求记录
 struct RepeatItem {
     var id: Int64?
@@ -36,6 +37,7 @@ extension RepeatItem: Codable, FetchableRecord, MutablePersistableRecord, TableR
         id = rowID
     }
 }
+
 /// 网络请求次数帮助类
 class RepeatHelper {
     static var maxCount: Int = 5

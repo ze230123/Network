@@ -15,7 +15,7 @@
 		7604E0A222EE93EF005A4503 /* RepeatHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7604E0A122EE93EF005A4503 /* RepeatHelperTests.swift */; };
 		762064D222D457E7005308B2 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064D122D457E7005308B2 /* UserInfo.swift */; };
 		762064D422D4592A005308B2 /* CommonDataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064D322D45929005308B2 /* CommonDataAPI.swift */; };
-		762064D622D5BFBE005308B2 /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064D522D5BFBE005308B2 /* LoggerPlugin.swift */; };
+		762064D622D5BFBE005308B2 /* NewLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064D522D5BFBE005308B2 /* NewLoggerPlugin.swift */; };
 		762064D822D5E547005308B2 /* ZipNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064D722D5E547005308B2 /* ZipNetworkViewController.swift */; };
 		762064DA22D5E9F1005308B2 /* SchoolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064D922D5E9F1005308B2 /* SchoolModel.swift */; };
 		762064DD22D83577005308B2 /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064DC22D83577005308B2 /* LoginUtils.swift */; };
@@ -40,7 +40,7 @@
 		766CD98422CC47C2004A3543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766CD98222CC47C2004A3543 /* LaunchScreen.storyboard */; };
 		766CD98F22CC47C2004A3543 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD98E22CC47C2004A3543 /* NetworkTests.swift */; };
 		766CD99A22CC47C2004A3543 /* NetworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD99922CC47C2004A3543 /* NetworkUITests.swift */; };
-		766CD9A922CC5054004A3543 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9A822CC5054004A3543 /* Network.swift */; };
+		766CD9A922CC5054004A3543 /* HttpServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9A822CC5054004A3543 /* HttpServer.swift */; };
 		766CD9AD22CC5674004A3543 /* MultiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9AC22CC5674004A3543 /* MultiTarget.swift */; };
 		766CD9B022CC9B5F004A3543 /* Response+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9AF22CC9B5F004A3543 /* Response+Map.swift */; };
 		766CD9B222CC9E9B004A3543 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CD9B122CC9E9B004A3543 /* ResultModel.swift */; };
@@ -90,7 +90,7 @@
 		7604E0A322EED3CC005A4503 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		762064D122D457E7005308B2 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		762064D322D45929005308B2 /* CommonDataAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDataAPI.swift; sourceTree = "<group>"; };
-		762064D522D5BFBE005308B2 /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
+		762064D522D5BFBE005308B2 /* NewLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoggerPlugin.swift; sourceTree = "<group>"; };
 		762064D722D5E547005308B2 /* ZipNetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipNetworkViewController.swift; sourceTree = "<group>"; };
 		762064D922D5E9F1005308B2 /* SchoolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolModel.swift; sourceTree = "<group>"; };
 		762064DC22D83577005308B2 /* LoginUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUtils.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		766CD99522CC47C2004A3543 /* NetworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		766CD99922CC47C2004A3543 /* NetworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUITests.swift; sourceTree = "<group>"; };
 		766CD99B22CC47C2004A3543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		766CD9A822CC5054004A3543 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		766CD9A822CC5054004A3543 /* HttpServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpServer.swift; sourceTree = "<group>"; };
 		766CD9AC22CC5674004A3543 /* MultiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTarget.swift; sourceTree = "<group>"; };
 		766CD9AF22CC9B5F004A3543 /* Response+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Map.swift"; sourceTree = "<group>"; };
 		766CD9B122CC9E9B004A3543 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
@@ -319,12 +319,12 @@
 		766CD9A722CC5043004A3543 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				766CD9A822CC5054004A3543 /* Network.swift */,
+				766CD9A822CC5054004A3543 /* HttpServer.swift */,
 				766CD9AC22CC5674004A3543 /* MultiTarget.swift */,
 				766DAFFD22E8559F0035610E /* CachePolicy.swift */,
 				766CD9B122CC9E9B004A3543 /* ResultModel.swift */,
 				76417E3122CF5363001B23FC /* NetworkError.swift */,
-				762064D522D5BFBE005308B2 /* LoggerPlugin.swift */,
+				762064D522D5BFBE005308B2 /* NewLoggerPlugin.swift */,
 				7604E09522EAC2C2005A4503 /* BaseStrategy.swift */,
 				7604E09D22EAF873005A4503 /* RepeatRequestHelper.swift */,
 				7604E09F22EAFDE9005A4503 /* AppDatabase.swift */,
@@ -592,14 +592,14 @@
 				762064E322D8368D005308B2 /* FileTestViewController.swift in Sources */,
 				766DAFFE22E8559F0035610E /* CachePolicy.swift in Sources */,
 				762064DD22D83577005308B2 /* LoginUtils.swift in Sources */,
-				766CD9A922CC5054004A3543 /* Network.swift in Sources */,
+				766CD9A922CC5054004A3543 /* HttpServer.swift in Sources */,
 				762064E522D8520B005308B2 /* String+Security.swift in Sources */,
 				7604E09622EAC2C2005A4503 /* BaseStrategy.swift in Sources */,
 				766CD9B222CC9E9B004A3543 /* ResultModel.swift in Sources */,
 				76417E3222CF5363001B23FC /* NetworkError.swift in Sources */,
 				762064DA22D5E9F1005308B2 /* SchoolModel.swift in Sources */,
 				76417E3622D3101F001B23FC /* NewAccountAPI.swift in Sources */,
-				762064D622D5BFBE005308B2 /* LoggerPlugin.swift in Sources */,
+				762064D622D5BFBE005308B2 /* NewLoggerPlugin.swift in Sources */,
 				76417E3022CF3F02001B23FC /* LoadingView.swift in Sources */,
 				766CD9B022CC9B5F004A3543 /* Response+Map.swift in Sources */,
 				76AF893F22D88A9E00DDEBFE /* Expiry.swift in Sources */,

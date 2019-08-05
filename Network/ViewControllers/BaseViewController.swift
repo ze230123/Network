@@ -24,10 +24,6 @@ class BaseViewController: UIViewController {
         self?.hiddenHUD()
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     func showHud() {
         hud = MBHUD.showLoading(to: view)
     }
@@ -35,4 +31,9 @@ class BaseViewController: UIViewController {
     func hiddenHUD() {
         hud?.hide(animated: true)
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
 }

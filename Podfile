@@ -15,6 +15,7 @@ target 'Network' do
   pod 'GRDB.swift/SQLCipher'
   pod 'SQLCipher', '~> 4.0'
   pod 'CryptoSwift'
+  pod 'MBProgressHUD', '~> 1.1.0'
 
   target 'NetworkTests' do
     inherit! :search_paths

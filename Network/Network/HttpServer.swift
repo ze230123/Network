@@ -36,21 +36,21 @@ let requestTimeoutClosure = { (endpoint: Endpoint, closure: @escaping MoyaProvid
     }
 }
 
-var plugins: [PluginType] = [LoggerPlugin()]
+var plugins: [PluginType] = [NewLoggerPlugin()]
 let provider = MoyaProvider<ApiMultiTarget>(requestClosure: requestTimeoutClosure, plugins: plugins)
 
-let server = Network.share
+let server = HttpServer.share
 
 /// 网络服务单例（添加加载动画使用）
-class Network {
-    static let share = Network()
+class HttpServer {
+    static let share = HttpServer()
     init() {
     }
 }
 
-extension Network {
+extension HttpServer {
     /// 显示hud动画
-    func showHUD(_ block: () -> Void) -> Network {
+    func showHUD(_ block: () -> Void) -> HttpServer {
         block()
         return self
     }
@@ -65,7 +65,7 @@ extension Network {
     }
 }
 
-extension Network {
+extension HttpServer {
     /// 封装好的接口方法，接口缓存、模型转换都已处理完毕，外部订阅后可直接使用模型
     func getSchools(api: ApiTargetType) -> Observable<ListModel<Schools>> {
         let request = provider.rx.request(ApiMultiTarget(api)).asObservable()

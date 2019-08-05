@@ -15,7 +15,7 @@ fileprivate func ZLog(_ items: Any..., separator: String = " ", terminator: Stri
     #endif
 }
 
-final class LoggerPlugin: PluginType {
+final class NewLoggerPlugin: PluginType {
     var startTimes: [String: CFAbsoluteTime] = [:]
 
     func willSend(_ request: RequestType, target: TargetType) {
