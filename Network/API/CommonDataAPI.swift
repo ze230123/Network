@@ -42,7 +42,7 @@ extension CommonDataAPI: ApiTargetType {
     var policy: CachePolicy {
         switch self {
         case .schoolList:
-            return .firstCache
+            return .cache
         case .batch:
             return .cache
         default:
