@@ -13,6 +13,7 @@ protocol ApiTargetType: TargetType {
     var parameters: [String: Any] { get }
     var policy: CachePolicy { get }
     var cacheKey: String { get }
+    var expiry: Expiry { get }
 }
 
 extension ApiTargetType {
@@ -34,6 +35,10 @@ extension ApiTargetType {
         print("缓存key: ", key)
         return key
     }
+
+    var expiry: Expiry {
+        return .time(.minute(10))
+    }
 }
 
 /// TargetType 包装，可以使用多个api
@@ -44,6 +49,10 @@ enum ApiMultiTarget: ApiTargetType {
     /// Initializes a `MultiTarget`.
     public init(_ target: ApiTargetType) {
         self = ApiMultiTarget.target(target)
+    }
+
+    var expiry: Expiry {
+        return target.expiry
     }
 
     var encoding: ParameterEncoding {
