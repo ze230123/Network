@@ -25,11 +25,11 @@ class ZipNetworkViewController: BaseViewController {
         let gkStatusRequest = server.request(api: CommonDataAPI.gkStatus(id: 841)).mapString()
 
         Observable
-            .showHud(startLoading)
+            .startLoading(showHud)
             .zip(listRequest, gkStatusRequest) { (list, gkStatus)in
                 return (list, gkStatus)
             }
-            .hiddenHud(endLoading)
+            .stopLoading(hideHud)
             .subscribe { (event) in
                 switch event {
                 case .next(let (list, result)):
@@ -44,9 +44,9 @@ class ZipNetworkViewController: BaseViewController {
 
     func schoolRequest() {
         server
-            .showHUD(startLoading)
+            .startLoading(showHud)
             .getSchools(api: CommonDataAPI.schoolList(id: 56))
-            .hiddenHud(endLoading)
+            .stopLoading(hideHud)
             .subscribe { (event) in
                 switch event {
                 case .next(let root):

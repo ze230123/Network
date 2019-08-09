@@ -20,7 +20,7 @@ class ExpiryTests: XCTestCase {
 
     func testSeconds() {
         let date = Date().addingTimeInterval(1000)
-        let expriy = Expiry.seconds(1000)
+        let expriy = Expiry.time(.seconds(1000))
 
         XCTAssertEqual(
             date.timeIntervalSinceReferenceDate,

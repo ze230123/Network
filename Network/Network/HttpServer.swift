@@ -49,8 +49,11 @@ class HttpServer {
 }
 
 extension HttpServer {
-    /// 显示hud动画
-    func showHUD(_ block: () -> Void) -> HttpServer {
+    /// 开始加载动画
+    ///
+    /// - Parameter block: 传入执行开始动画的闭包
+    /// - Returns: 返回 HttpServer 对象
+    func startLoading(_ block: () -> Void) -> HttpServer {
         block()
         return self
     }

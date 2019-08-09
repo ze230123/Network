@@ -49,6 +49,7 @@ class RepeatHelper {
     init(queue: DatabaseQueue) {
         self.queue = queue
     }
+
     /// 添加网络api记录
     func add(_ path: String) {
         var item = RepeatItem(path: path.MD5)

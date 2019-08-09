@@ -51,6 +51,14 @@
 		766DAFFA22E84C300035610E /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DAFF922E84C300035610E /* Data+Extensions.swift */; };
 		766DAFFE22E8559F0035610E /* CachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DAFFD22E8559F0035610E /* CachePolicy.swift */; };
 		768C317622F7FD3000AE85E9 /* TimeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C317522F7FD3000AE85E9 /* TimeConstant.swift */; };
+		768C317E22F8179B00AE85E9 /* UserProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C317D22F8179B00AE85E9 /* UserProperty.swift */; };
+		768C318022F820A700AE85E9 /* DBTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C317F22F820A700AE85E9 /* DBTestViewController.swift */; };
+		768C318222F820D500AE85E9 /* DBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C318122F820D500AE85E9 /* DBTests.swift */; };
+		768C318422F8222A00AE85E9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C318322F8222A00AE85E9 /* Model.swift */; };
+		768C318622F8228000AE85E9 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C318522F8228000AE85E9 /* Database.swift */; };
+		768C318822F829D800AE85E9 /* UserInfoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C318722F829D800AE85E9 /* UserInfoHelper.swift */; };
+		768C318A22F82B3D00AE85E9 /* UserInfoDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C318922F82B3D00AE85E9 /* UserInfoDatabase.swift */; };
+		768C319022FD713900AE85E9 /* MyUDID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C318F22FD713900AE85E9 /* MyUDID.swift */; };
 		768CB58422E7F306001BE0B4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB58322E7F306001BE0B4 /* Date+Extensions.swift */; };
 		768CB58A22E825B8001BE0B4 /* ExpiryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB58922E825B8001BE0B4 /* ExpiryTests.swift */; };
 		768CB58C22E8305A001BE0B4 /* Date+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB58B22E8305A001BE0B4 /* Date+ExtensionsTests.swift */; };
@@ -88,7 +96,6 @@
 		7604E09D22EAF873005A4503 /* RepeatRequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatRequestHelper.swift; sourceTree = "<group>"; };
 		7604E09F22EAFDE9005A4503 /* AppDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		7604E0A122EE93EF005A4503 /* RepeatHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatHelperTests.swift; sourceTree = "<group>"; };
-		7604E0A322EED3CC005A4503 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		762064D122D457E7005308B2 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		762064D322D45929005308B2 /* CommonDataAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDataAPI.swift; sourceTree = "<group>"; };
 		762064D522D5BFBE005308B2 /* NewLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoggerPlugin.swift; sourceTree = "<group>"; };
@@ -133,6 +140,14 @@
 		766DAFF922E84C300035610E /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		766DAFFD22E8559F0035610E /* CachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachePolicy.swift; sourceTree = "<group>"; };
 		768C317522F7FD3000AE85E9 /* TimeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConstant.swift; sourceTree = "<group>"; };
+		768C317D22F8179B00AE85E9 /* UserProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProperty.swift; sourceTree = "<group>"; };
+		768C317F22F820A700AE85E9 /* DBTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTestViewController.swift; sourceTree = "<group>"; };
+		768C318122F820D500AE85E9 /* DBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTests.swift; sourceTree = "<group>"; };
+		768C318322F8222A00AE85E9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		768C318522F8228000AE85E9 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		768C318722F829D800AE85E9 /* UserInfoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHelper.swift; sourceTree = "<group>"; };
+		768C318922F82B3D00AE85E9 /* UserInfoDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDatabase.swift; sourceTree = "<group>"; };
+		768C318F22FD713900AE85E9 /* MyUDID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUDID.swift; sourceTree = "<group>"; };
 		768CB58322E7F306001BE0B4 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		768CB58922E825B8001BE0B4 /* ExpiryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiryTests.swift; sourceTree = "<group>"; };
 		768CB58B22E8305A001BE0B4 /* Date+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ExtensionsTests.swift"; sourceTree = "<group>"; };
@@ -237,6 +252,7 @@
 				762064E422D8520B005308B2 /* String+Security.swift */,
 				762064DC22D83577005308B2 /* LoginUtils.swift */,
 				768C317522F7FD3000AE85E9 /* TimeConstant.swift */,
+				768C318F22FD713900AE85E9 /* MyUDID.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -250,6 +266,7 @@
 				76417E3322D30CC7001B23FC /* MultiNetworkViewController.swift */,
 				762064D722D5E547005308B2 /* ZipNetworkViewController.swift */,
 				762064E222D8368D005308B2 /* FileTestViewController.swift */,
+				768C317F22F820A700AE85E9 /* DBTestViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -257,7 +274,6 @@
 		766CD96D22CC47C1004A3543 = {
 			isa = PBXGroup;
 			children = (
-				7604E0A322EED3CC005A4503 /* MyPlayground.playground */,
 				766CD97822CC47C1004A3543 /* Network */,
 				766CD98D22CC47C2004A3543 /* NetworkTests */,
 				766CD99822CC47C2004A3543 /* NetworkUITests */,
@@ -280,6 +296,7 @@
 		766CD97822CC47C1004A3543 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				768C317C22F8175600AE85E9 /* GRDB */,
 				766CD9A722CC5043004A3543 /* Network */,
 				76AF893B22D8831A00DDEBFE /* Cache */,
 				762064E122D8362B005308B2 /* ViewControllers */,
@@ -306,6 +323,9 @@
 				768CB58B22E8305A001BE0B4 /* Date+ExtensionsTests.swift */,
 				768CB58D22E8313D001BE0B4 /* DiskStorageTests.swift */,
 				7604E0A122EE93EF005A4503 /* RepeatHelperTests.swift */,
+				768C318122F820D500AE85E9 /* DBTests.swift */,
+				768C318322F8222A00AE85E9 /* Model.swift */,
+				768C318522F8228000AE85E9 /* Database.swift */,
 			);
 			path = NetworkTests;
 			sourceTree = "<group>";
@@ -334,6 +354,16 @@
 				762064E022D83615005308B2 /* Utils */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		768C317C22F8175600AE85E9 /* GRDB */ = {
+			isa = PBXGroup;
+			children = (
+				768C317D22F8179B00AE85E9 /* UserProperty.swift */,
+				768C318722F829D800AE85E9 /* UserInfoHelper.swift */,
+				768C318922F82B3D00AE85E9 /* UserInfoDatabase.swift */,
+			);
+			path = GRDB;
 			sourceTree = "<group>";
 		};
 		76AF893B22D8831A00DDEBFE /* Cache */ = {
@@ -588,17 +618,22 @@
 				768C317622F7FD3000AE85E9 /* TimeConstant.swift in Sources */,
 				762064D422D4592A005308B2 /* CommonDataAPI.swift in Sources */,
 				766DAFFA22E84C300035610E /* Data+Extensions.swift in Sources */,
+				768C318822F829D800AE85E9 /* UserInfoHelper.swift in Sources */,
 				76417E3422D30CC7001B23FC /* MultiNetworkViewController.swift in Sources */,
 				76417E3822D3108C001B23FC /* AppConstant.swift in Sources */,
 				7604E09E22EAF873005A4503 /* RepeatRequestHelper.swift in Sources */,
+				768C317E22F8179B00AE85E9 /* UserProperty.swift in Sources */,
 				766CD9B822CDA8DB004A3543 /* NewModel.swift in Sources */,
 				766CD97A22CC47C1004A3543 /* AppDelegate.swift in Sources */,
 				762064E322D8368D005308B2 /* FileTestViewController.swift in Sources */,
 				766DAFFE22E8559F0035610E /* CachePolicy.swift in Sources */,
 				762064DD22D83577005308B2 /* LoginUtils.swift in Sources */,
+				768C318022F820A700AE85E9 /* DBTestViewController.swift in Sources */,
 				766CD9A922CC5054004A3543 /* HttpServer.swift in Sources */,
+				768C318A22F82B3D00AE85E9 /* UserInfoDatabase.swift in Sources */,
 				762064E522D8520B005308B2 /* String+Security.swift in Sources */,
 				7604E09622EAC2C2005A4503 /* BaseStrategy.swift in Sources */,
+				768C319022FD713900AE85E9 /* MyUDID.swift in Sources */,
 				766CD9B222CC9E9B004A3543 /* ResultModel.swift in Sources */,
 				76417E3222CF5363001B23FC /* NetworkError.swift in Sources */,
 				762064DA22D5E9F1005308B2 /* SchoolModel.swift in Sources */,
@@ -618,10 +653,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				768C318422F8222A00AE85E9 /* Model.swift in Sources */,
 				768CB58E22E8313D001BE0B4 /* DiskStorageTests.swift in Sources */,
 				768CB58C22E8305A001BE0B4 /* Date+ExtensionsTests.swift in Sources */,
 				768CB58A22E825B8001BE0B4 /* ExpiryTests.swift in Sources */,
+				768C318222F820D500AE85E9 /* DBTests.swift in Sources */,
 				766CD98F22CC47C2004A3543 /* NetworkTests.swift in Sources */,
+				768C318622F8228000AE85E9 /* Database.swift in Sources */,
 				7604E0A222EE93EF005A4503 /* RepeatHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

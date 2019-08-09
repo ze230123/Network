@@ -9,9 +9,9 @@
 import Moya
 import Result
 
-fileprivate func ZLog(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+private func ZLog(_ items: [String]) {
     #if DEBUG
-    print(items, separator: separator, terminator: terminator)
+    print(items.joined(separator: ""))
     #endif
 }
 
@@ -51,7 +51,7 @@ final class NewLoggerPlugin: PluginType {
     }
 
     fileprivate func outputItems(_ items: [String]) {
-        ZLog(items.joined(separator: ""))
+        ZLog(items)
     }
 }
 

@@ -10,6 +10,53 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Test View Controller-->
+        <scene sceneID="qvt-vk-RNm">
+            <objects>
+                <viewController id="Z3r-Zq-Lwg" customClass="DBTestViewController" customModule="Network" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fIb-RS-hXZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="FVV-Nf-ur6">
+                                <rect key="frame" x="176" y="360" width="62" height="176"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdF-XH-vOa">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
+                                        <state key="normal" title="保存"/>
+                                        <connections>
+                                            <action selector="saveAction:" destination="Z3r-Zq-Lwg" eventType="touchUpInside" id="81g-Y5-HM4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcE-0l-ox0">
+                                        <rect key="frame" x="0.0" y="73" width="62" height="30"/>
+                                        <state key="normal" title="读取"/>
+                                        <connections>
+                                            <action selector="readAction:" destination="Z3r-Zq-Lwg" eventType="touchUpInside" id="ti1-6Q-LNK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eo0-nZ-AsT">
+                                        <rect key="frame" x="0.0" y="146" width="62" height="30"/>
+                                        <state key="normal" title="删除全部"/>
+                                        <connections>
+                                            <action selector="deleteAction:" destination="Z3r-Zq-Lwg" eventType="touchUpInside" id="bWI-jU-9Nq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FVV-Nf-ur6" firstAttribute="centerY" secondItem="fIb-RS-hXZ" secondAttribute="centerY" id="tim-aE-v6p"/>
+                            <constraint firstItem="FVV-Nf-ur6" firstAttribute="centerX" secondItem="fIb-RS-hXZ" secondAttribute="centerX" id="vnY-9x-6JS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3yj-x2-xpH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWE-rI-VqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="-589"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -19,7 +66,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="e0l-wf-1dr">
-                                <rect key="frame" x="153" y="333" width="108" height="230"/>
+                                <rect key="frame" x="153" y="308" width="108" height="280"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Oe-L9-5L5">
                                         <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
@@ -54,6 +101,13 @@
                                         <state key="normal" title="文件存储"/>
                                         <connections>
                                             <segue destination="SWw-qn-F4z" kind="show" id="Clx-or-Zap"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjl-XE-KD7">
+                                        <rect key="frame" x="0.0" y="250" width="108" height="30"/>
+                                        <state key="normal" title="数据库测试"/>
+                                        <connections>
+                                            <segue destination="Z3r-Zq-Lwg" kind="show" id="MCs-NI-f74"/>
                                         </connections>
                                     </button>
                                 </subviews>

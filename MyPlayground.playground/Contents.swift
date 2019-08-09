@@ -1,51 +1,33 @@
 import UIKit
 
-private let encrypt_vil: [UInt8] = [
-    65, 68, 54, 52, 65, 53, 69, 48,
-    52, 56, 57, 57, 69, 56, 56, 69,
-    68, 48, 70, 55, 70, 50, 49, 51,
-    65, 52, 68, 69, 54, 65, 53, 48
-]
+typealias Block = (Int, Int) -> Int
 
-extension Data {
-    func toString() -> String? {
-        return String(data: self, encoding: .utf8)
-    }
-    
-    var encode: Data {
-        var bytes: [UInt8] = []
-        for (idx, str) in self.enumerated() {
-            let temp = str ^ encrypt_vil[idx % encrypt_vil.count]
-            bytes.append(temp)
-        }
-        let data = Data(bytes).base64EncodedData()
-        return data
-    }
-    
-    var decode: Data {
-        guard let newData = Data(base64Encoded: self) else {
-            return Data()
-        }
-        var bytes: [UInt8] = []
-        for (idx, str) in newData.enumerated() {
-            let temp = str ^ encrypt_vil[idx % encrypt_vil.count]
-            bytes.append(temp)
-        }
-        return Data(bytes)
+
+//let sum: (Int, Int) -> Int = { (a, b) in
+//    let s = a +
+//}
+//
+//let sum1: Block = { (a, b) in
+//    return a + b
+//}
+
+typealias SumBlock = (Int, Int) -> Int
+
+class Utils {
+    let sum: SumBlock = { (a: Int, b: Int) in
+        return a + b
     }
 }
 
-//if let data = "哈哈".data(using: .utf8) {
-//    let base64 = writer(json: data)
-//    load(data: base64)
-//}
+struct UtilsBlock {
 
-let test = "哈哈"
+    static func sum() -> Block {
+        return { (a, b) in
+            return a + b
+        }
+    }
+}
 
-let base64 = test.data(using: .utf8)?.encode ?? Data()
+let sum = UtilsBlock.sum()
 
-print(String(data: base64, encoding: .utf8) ?? "")
-
-let result = base64.decode.toString() ?? ""
-
-print(result)
+print(sum(1, 2))

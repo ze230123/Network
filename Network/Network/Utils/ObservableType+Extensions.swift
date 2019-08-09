@@ -11,25 +11,35 @@ import RxSwift
 import Moya
 
 extension Observable {
-    /// 显示加载动画
-    static func showHud(_ block: () -> Void) -> Observable.Type {
+    /// 开始加载动画
+    ///
+    /// - Parameter block: 传入执行开始动画的闭包
+    /// - Returns: 返回可观察对象类型
+    static func startLoading(_ block: () -> Void) -> Observable.Type {
         block()
         return Observable.self
     }
 }
 
 extension ObservableType {
-    /// 隐藏加载动画
-    func hiddenHud(_ block: @escaping () -> Void) -> Observable<E> {
-        //        return map { $0 }.do(onSubscribed: {
-        //            print("onDispose")
-        //            block()
-        //        })
-        return map { $0 }.do(onError: { (_) in
-            print("onError")
+    /// 停止加载动画
+    ///
+    /// - Parameter block: 传入执行停止动画的闭包
+    /// - Returns: 返回可观察对象
+    func stopLoading(_ block: @escaping () -> Void) -> Observable<E> {
+        return self.do(onError: { (_) in
             block()
         }, onCompleted: {
-            print("onCompleted")
+            block()
+        })
+    }
+
+    /// 出现错误时停止加载动画
+    ///
+    /// - Parameter block: 传入执行停止动画的闭包
+    /// - Returns: 返回可观察对象
+    func stopLoadingWithError(_ block: @escaping () -> Void) -> Observable<E> {
+        return self.do(onError: { (_) in
             block()
         })
     }

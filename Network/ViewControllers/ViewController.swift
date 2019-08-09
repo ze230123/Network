@@ -16,7 +16,8 @@ class ViewController: BaseViewController {
     }
 
     @IBAction func textAction(_ sender: UIButton) {
-        MBHUD.showMessage("加载成功", to: self.view)
+//        MBHUD.showMessage("加载成功", to: self.view)
+        MBHUD.showLoading(to: view)
     }
 }
 

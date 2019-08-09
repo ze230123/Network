@@ -13,6 +13,9 @@ struct UserInfo {
     var score: Score?
     var isGaokao: Bool = false
 
+    init() {
+    }
+
     init(user: User) {
         self.user = user
     }

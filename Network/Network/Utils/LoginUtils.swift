@@ -48,7 +48,7 @@ class LoginUtils {
             return Observable.error(NetworkError.message("用户信息为空"))
         }
         let api = NewAccountAPI.scoreByUserId(user: user, isGaokao: info.isGaokao)
-        return server
+        let obser: Observable<UserInfo> = server
             .request(api: api)
             .mapObject(Score.self)
             .map({ (root) in
@@ -56,11 +56,25 @@ class LoginUtils {
                 new.score = root.result
                 return new
             })
+
+        let manager = DBManager(name: user.username)
+        guard let score = manager.read() else {
+            return obser
+        }
+        guard score.provinceNumId == info.user?.provinceId else {
+            return obser
+        }
+        guard score.isGaoKao == info.isGaokao else {
+            return obser
+        }
+        var new = info
+        new.score = score
+        return Observable.just(new)
     }
-    
+
     class func checkInfoStatus(info: UserInfo) {
     }
-    
+
     private let info: UserInfo
     private var status: Action = .main
     private var view: UIView
@@ -102,8 +116,12 @@ class LoginUtils {
     }
     
     func save() {
-        print("保存user信息")
-        print("保存score信息")
+        user = info
+        let manager = DBManager(name: user.user?.username ?? "")
+        if let score = user.score {
+            manager.add(score)
+            print("保存score信息")
+        }
     }
 }
 

@@ -7,6 +7,8 @@
 //
 import UIKit
 
+var user = UserInfo()
+
 class MultiNetworkViewController: BaseViewController {
 
     override func viewDidLoad() {
@@ -20,23 +22,12 @@ class MultiNetworkViewController: BaseViewController {
     }
 
     func request() {
-        let loginAPI = NewAccountAPI.login(userName: "15545583589", password: "123456")
+        let loginAPI = NewAccountAPI.login(userName: "19000000034", password: "123456")
         server
-            .showHUD(startLoading)
+            .startLoading(showHud)
             .request(api: loginAPI)
             .mapObject(UserLogin.self)
-            .map { (root) -> Int in
-                guard let state = root.result?.state else {
-                    throw NetworkError.message("未知错误，登陆失败")
-                }
-                guard state == .success else {
-                    throw NetworkError.message(state.description)
-                }
-                guard let userId = root.result?.userId?.numId else {
-                    throw NetworkError.message("用户ID获取失败")
-                }
-                return userId
-            }
+            .map(LoginUtils.getUserId)
             .flatMap(LoginUtils.getUserInfo)
             .map({ (root) -> UserInfo in
                 guard let user = root.result else {
@@ -47,7 +38,7 @@ class MultiNetworkViewController: BaseViewController {
             })
             .flatMap(LoginUtils.getGKStatus)
             .flatMap(LoginUtils.getScore)
-            .hiddenHud(endLoading)
+            .stopLoading(hideHud)
             .subscribe { [unowned self] (event) in
                 switch event {
                 case .next(let root):

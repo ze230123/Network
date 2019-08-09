@@ -32,11 +32,11 @@ class NetworkViewController: BaseViewController {
 
     func request(action: RefreshAction) {
         server
-            .showHUD(startLoading)
+            .startLoading(showHud)
             .request(api: TestAPI.new)
             .testMap(NewModel.self)
             .verifyStatus()
-            .hiddenHud(endLoading)
+            .stopLoading(hideHud)
             .subscribe { [unowned self] (event) in
                 switch event {
                 case .next(let root):
