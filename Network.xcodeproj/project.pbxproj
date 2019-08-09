@@ -59,6 +59,7 @@
 		768C318822F829D800AE85E9 /* UserInfoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C318722F829D800AE85E9 /* UserInfoHelper.swift */; };
 		768C318A22F82B3D00AE85E9 /* UserInfoDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C318922F82B3D00AE85E9 /* UserInfoDatabase.swift */; };
 		768C319022FD713900AE85E9 /* MyUDID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C318F22FD713900AE85E9 /* MyUDID.swift */; };
+		768C319222FD77D800AE85E9 /* MyUDIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C319122FD77D800AE85E9 /* MyUDIDTests.swift */; };
 		768CB58422E7F306001BE0B4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB58322E7F306001BE0B4 /* Date+Extensions.swift */; };
 		768CB58A22E825B8001BE0B4 /* ExpiryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB58922E825B8001BE0B4 /* ExpiryTests.swift */; };
 		768CB58C22E8305A001BE0B4 /* Date+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB58B22E8305A001BE0B4 /* Date+ExtensionsTests.swift */; };
@@ -148,6 +149,7 @@
 		768C318722F829D800AE85E9 /* UserInfoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHelper.swift; sourceTree = "<group>"; };
 		768C318922F82B3D00AE85E9 /* UserInfoDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDatabase.swift; sourceTree = "<group>"; };
 		768C318F22FD713900AE85E9 /* MyUDID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUDID.swift; sourceTree = "<group>"; };
+		768C319122FD77D800AE85E9 /* MyUDIDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUDIDTests.swift; sourceTree = "<group>"; };
 		768CB58322E7F306001BE0B4 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		768CB58922E825B8001BE0B4 /* ExpiryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiryTests.swift; sourceTree = "<group>"; };
 		768CB58B22E8305A001BE0B4 /* Date+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ExtensionsTests.swift"; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				768CB58D22E8313D001BE0B4 /* DiskStorageTests.swift */,
 				7604E0A122EE93EF005A4503 /* RepeatHelperTests.swift */,
 				768C318122F820D500AE85E9 /* DBTests.swift */,
+				768C319122FD77D800AE85E9 /* MyUDIDTests.swift */,
 				768C318322F8222A00AE85E9 /* Model.swift */,
 				768C318522F8228000AE85E9 /* Database.swift */,
 			);
@@ -657,6 +660,7 @@
 				768CB58E22E8313D001BE0B4 /* DiskStorageTests.swift in Sources */,
 				768CB58C22E8305A001BE0B4 /* Date+ExtensionsTests.swift in Sources */,
 				768CB58A22E825B8001BE0B4 /* ExpiryTests.swift in Sources */,
+				768C319222FD77D800AE85E9 /* MyUDIDTests.swift in Sources */,
 				768C318222F820D500AE85E9 /* DBTests.swift in Sources */,
 				766CD98F22CC47C2004A3543 /* NetworkTests.swift in Sources */,
 				768C318622F8228000AE85E9 /* Database.swift in Sources */,
