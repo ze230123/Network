@@ -22,7 +22,23 @@ class MultiNetworkViewController: BaseViewController {
     }
 
     func request() {
+
+//        server
+//            .request(api: NewAccountAPI.info(numId: 13203922))
+//            .mapObject(User.self)
+//            .subscribe { (event) in
+//                switch event {
+//                case .next(let root):
+//                    print(root)
+//                    let manager = DBManager(name: root.result?.numId.stringValue ?? "")
+//                case .error(let error):
+//                    MBHUD.showMessage(error.localizedDescription, to: self.view)
+//                case .completed: break
+//                }
+//            }.disposed(by: disposeBag)
+
         let loginAPI = NewAccountAPI.login(userName: "19000000034", password: "123456")
+
         server
             .startLoading(showHud)
             .request(api: loginAPI)

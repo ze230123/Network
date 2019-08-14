@@ -32,4 +32,15 @@ class MyUDIDTests: XCTestCase {
 
         XCTAssertEqual(udid1, udid2)
     }
+
+    func testsChangeUid() {
+        let myUdid = MyUDID()
+
+        let udid1 = myUdid.getUDID(uid: "14053626")
+        let udid2 = myUdid.getUDID(uid: "7654321")
+
+        print(udid1)
+        print(udid2)
+        XCTAssertNotEqual(udid1, udid2)
+    }
 }

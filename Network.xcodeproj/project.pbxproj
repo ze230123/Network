@@ -21,6 +21,7 @@
 		762064DD22D83577005308B2 /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064DC22D83577005308B2 /* LoginUtils.swift */; };
 		762064E322D8368D005308B2 /* FileTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064E222D8368D005308B2 /* FileTestViewController.swift */; };
 		762064E522D8520B005308B2 /* String+Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762064E422D8520B005308B2 /* String+Security.swift */; };
+		76206DBC23011A0C00E5F059 /* LoginUtils2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76206DBB23011A0C00E5F059 /* LoginUtils2.swift */; };
 		76417E2822CEF009001B23FC /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2722CEF009001B23FC /* NetworkViewController.swift */; };
 		76417E2A22CF29B5001B23FC /* MBProgressHUD+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2922CF29B5001B23FC /* MBProgressHUD+Custom.swift */; };
 		76417E3022CF3F02001B23FC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76417E2F22CF3F02001B23FC /* LoadingView.swift */; };
@@ -105,6 +106,7 @@
 		762064DC22D83577005308B2 /* LoginUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUtils.swift; sourceTree = "<group>"; };
 		762064E222D8368D005308B2 /* FileTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTestViewController.swift; sourceTree = "<group>"; };
 		762064E422D8520B005308B2 /* String+Security.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Security.swift"; sourceTree = "<group>"; };
+		76206DBB23011A0C00E5F059 /* LoginUtils2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUtils2.swift; sourceTree = "<group>"; };
 		76417E2722CEF009001B23FC /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
 		76417E2922CF29B5001B23FC /* MBProgressHUD+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Custom.swift"; sourceTree = "<group>"; };
 		76417E2F22CF3F02001B23FC /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				762064DC22D83577005308B2 /* LoginUtils.swift */,
 				768C317522F7FD3000AE85E9 /* TimeConstant.swift */,
 				768C318F22FD713900AE85E9 /* MyUDID.swift */,
+				76206DBB23011A0C00E5F059 /* LoginUtils2.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				762064DA22D5E9F1005308B2 /* SchoolModel.swift in Sources */,
 				76417E3622D3101F001B23FC /* NewAccountAPI.swift in Sources */,
 				762064D622D5BFBE005308B2 /* NewLoggerPlugin.swift in Sources */,
+				76206DBC23011A0C00E5F059 /* LoginUtils2.swift in Sources */,
 				76417E3022CF3F02001B23FC /* LoadingView.swift in Sources */,
 				766CD9B022CC9B5F004A3543 /* Response+Map.swift in Sources */,
 				76AF893F22D88A9E00DDEBFE /* Expiry.swift in Sources */,

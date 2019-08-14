@@ -23,18 +23,23 @@ struct MyUDID {
         let defauts = UserDefaults.standard
 
         var udid = defauts.string(forKey: "uid") ?? ""
+        var salt = ""
 
         if udid.isEmpty {
             print("udid 为空")
-            udid = encodeUdid(uid: uid)
+            salt = UUID().uuidString.MD5
+            let data = (uid.MD5 + salt).data(using: .utf8)
+            udid = data?.encode.toString() ?? ""
         } else {
-            var salt = ""
             print("udid 有值")
-            udid = udid.data(using: .utf8)?.decode.toString() ?? ""
-            salt = String(udid.prefix(32))
+            udid = decodeUdid(udid)
+            print(udid)
+            print(uid.MD5)
+            salt = String(udid.suffix(32))
+            print(salt)
             let subUid = String(udid.prefix(32))
             let uidMd5 = uid.MD5
-            if subUid == uidMd5 {
+            if subUid != uidMd5 {
                 print("重新生成")
                 salt = UUID().uuidString.MD5
                 let data = (uid.MD5 + salt).data(using: .utf8)
@@ -45,7 +50,7 @@ struct MyUDID {
             }
         }
         defauts.set(udid, forKey: "uid")
-        return udid
+        return salt
     }
 
     func salt() -> String {
@@ -58,7 +63,6 @@ struct MyUDID {
     }
 
     func decodeUdid(_ udid: String) -> String {
-        let decode = udid.data(using: .utf8)?.decode.toString() ?? ""
-        
+        return udid.data(using: .utf8)?.decode.toString() ?? ""
     }
 }

@@ -76,7 +76,11 @@ extension NewAccountAPI: ApiTargetType {
         case .sms(let phone):
             return ["mobile": phone]
         case let .info(numId):
-            return ["numId": numId, "isFillAreaName": true.stringValue]
+            return [
+                "numId": numId,
+                "isFillAreaName": true.stringValue,
+                "machineCode": MyUDID().getUDID(uid: "\(numId)")
+            ]
 //        case .register(let parameter):
 //            return parameter.parameters
         case let .verifySms(phone, sms):

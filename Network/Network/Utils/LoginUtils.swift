@@ -23,11 +23,11 @@ class LoginUtils {
         }
         return userId
     }
-    
+
     class func getUserInfo(id: Int) -> Observable<ResultModel<User>> {
         return server.request(api: NewAccountAPI.info(numId: id)).mapObject(User.self)
     }
-    
+
     class func getGKStatus(info: UserInfo) -> Observable<UserInfo> {
         guard let user = info.user else {
             return Observable.error(NetworkError.message("用户信息为空"))
